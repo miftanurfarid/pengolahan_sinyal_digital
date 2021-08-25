@@ -1,2 +1,2 @@
-# Repo perkuliahan pengolahan sinyal digital
+# Repo Mata Kuliah Pengolahan Sinyal Digital
 

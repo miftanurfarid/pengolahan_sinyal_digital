@@ -5,3 +5,6 @@
 *.snm
 *.synctex.gz
 *.toc
+referensi/*/*.pdf
+referensi/*/*.lyx
+referensi/*/*.odt

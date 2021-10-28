@@ -50,7 +50,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{The Fourier series}
+	\frametitle{The Fourier Series}
 	\begin{itemize}
 		\item Well, if look at previous expression
 		\[ H(e^{j\omega}) = \sum\limits_{n = -\infty}^{+\infty} h(n) e^{-j \omega n} \]
@@ -70,7 +70,7 @@
 		\begin{align*}
 			h(n) &= \frac{1}{2\pi}\int\limits_{-\pi}^{\pi} H(e^{j\omega})e^{j\omega n} d\omega = \frac{1}{2\pi}\int\limits_{-\pi}^{\pi} \left[ \sum\limits_{k} h(k) e^{-j \omega k} \right]e^{j\omega n} d\omega \\
 			&= \frac{1}{2\pi} \sum\limits_{k} h(k) \int\limits_{-\pi}^{\pi} e^{j\omega (n-k)} d\omega \\
-			& n \neq k \rightarrow \int\limits_{-\pi}^{\pi} e^{j\omega (n-k)} d\omega = 0\\
+			& n \neq k \rightarrow \int\limits_{-\pi}^{\pi} e^{j\omega (n-k)} d\omega = \frac{e^{\pi j}-e^{-\pi j}}{j} = 2\sin(\pi) = 0\\
 			& n = k \rightarrow \int\limits_{-\pi}^{\pi} e^{j\omega (n-k)} d\omega = 2 \pi \\
 			&= h(n)
 		\end{align*}
@@ -107,7 +107,7 @@
 		\[ x(n)*h(n) \rightarrow X(e^{j \omega})H(e^{j \omega}) \]
 		\item Validation:
 		\begin{align*}
-		e^{j \omega_0 n} &\xrightarrow{LSI} H(e^{j \omega_0})e^{j\omega_0 n} \\
+		e^{j \omega_o n} &\xrightarrow{LSI} H(e^{j \omega_o})e^{j\omega_o n} \\
 		\sum_k A_k e^{j \omega_k n} &\rightarrow \sum_k A_k H(e^{j \omega_k}) e^{j \omega_k n} \\
 		x(n) = \frac{1}{2\pi}\int\limits_{-\pi}^{\pi}X(e^{j \omega}) e^{j \omega n} d\omega &\rightarrow \frac{1}{2\pi} \int\limits_{-\pi}^{\pi}X(e^{j \omega}) H(e^{j \omega}) e^{j \omega n} d\omega = y(n) \\
 		Y(e^{j \omega}) &= X(e^{j\omega})H(e^{j\omega})
@@ -154,16 +154,6 @@
 
 \begin{frame}
 	\begin{itemize}
-		\item We have $ X(e^{j\omega}) $ which represent in terms of its real part and its imaginary part:
-		\[ X(e^{j\omega}) = X_R(e^{j \omega}) + j X_I(e^{j \omega}) \]
-		\item And conjugate symmetric counterpart:
-		\[ X^*(e^{-j\omega}) = X_R(e^{-j \omega}) - j X_I(e^{-j \omega}) \]
-		\item We know that those two are equal $ X(e^{j\omega}) = X^*(e^{-j\omega}) $, then real part and imaginary part of those two are equal.
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\begin{itemize}
 		\item Real part must be equal
 		\[ X_R(e^{j \omega}) = X_R(e^{-j \omega}) \]
 		\item in other words, the real part has to be the same if $\omega$ is replaced by $-\omega$
@@ -182,10 +172,10 @@
 
 \begin{frame}
 	\begin{itemize}
-		\item We can also sho that the magnitude of the Fourier transform is an even function of $\omega$
-		\[ \left| X(e^{j\omega}) \right| \text{ odd}\]
+		\item We can also show that the magnitude of the Fourier transform is an even function of $\omega$
+		\[ \left| X(e^{j\omega}) \right| \text{ even}\]
 		\item And the angle of the Fourier transform is an odd function of $\omega$
-		\[ \angle X(e^{j\omega}) \text{ even} \]
+		\[ \angle X(e^{j\omega}) \text{ odd} \]
 	\end{itemize}
 \end{frame}
 
@@ -205,7 +195,7 @@
 	\begin{itemize}
 		\item The output of the sampler is the input to the sampler, multiplied by an impulse train:
 		\[ \tilde{x}_A(t) = x_A(t)\sum_{- \infty}^{+\infty} u_o (t - nT) \]
-		\item Or equivalently, an impulse train with the areas of the impulse given by the values of $ x_A(t) $ at the times that the impulses occur.
+		\item Or equivalently, an impulse train with the areas of the impulse given by the values of $ x_A(t) $ at the times that the impulses occur ($ nT $).
 		\[ \tilde{x}_A(t) = \sum_{- \infty}^{+\infty} x_A(nT) u_o (t - nT) \]
 	\end{itemize}
 \end{frame}
@@ -228,6 +218,43 @@
 \begin{frame}
 	\begin{itemize}
 		\item How about we look from a different point of view?
+		\[ \tilde{X}_A(j\Omega) = \int\limits_{-\infty}^{+\infty} \tilde{X}_A(t) e^{-j \Omega t} dt \]
+		\item Substitute in for $ \tilde{x}_A(t) $, the relationship in terms of an impulse train and interchange summation and integration
+		\[ \tilde{X}_A(j\Omega) = \sum_{n = - \infty}^{+\infty} x_A(nT)  \int\limits_{-\infty}^{+\infty} e^{-j \Omega t} u_o (t - nT) dt \]
+		\item then the Fourier transform at the output of the sampler as given by the sampling values times $ e^{-jn \Omega T} $.
+		\[ \tilde{X}_A(j\Omega) = \sum_{n = - \infty}^{+\infty} x_A(nT)  e^{-jn\Omega T} \]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=0.4\linewidth]{img/img04}
+	\end{center}
+	\begin{itemize}
+		\item We just developed two expression:
+		\[ \tilde{X}_A(j\Omega) = \frac{1}{T} \sum_{r = -\infty}^{+ \infty} X_A \left(j\Omega+j\frac{2 \pi r}{T}\right) \] and 
+		\[ \tilde{X}_A(j\Omega) = \sum_{n = - \infty}^{+\infty} x_A(nT)  e^{-jn\Omega T} \]
+		\item What is the Fourier transform of the output of the continuous to discrete time converter?
+		\[ X(e^{j\omega}) = \sum_n X_A(nT)e^{-j\omega n} \]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Let's compare these two expressions:
+		\[ \tilde{X}_A(j\Omega) = \sum_{n = - \infty}^{+\infty} x_A(nT)  e^{-jn\Omega T} \]
+		\[ X(e^{j\omega}) = \sum_n X_A(nT)e^{-j\omega n} \]
+		\item We see that they are exactly the same except that for $\omega$ and $\Omega T$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Consequently, we can say that the discrete time Fourier transform is equal to the continuous time Fourier transform of the impulse train, with $ \Omega T $ equal to $\omega$
+		\begin{align*}
+			X(e^{j\omega}) &= \left.\tilde{X}_A(j\Omega)\right|_{\Omega T = \omega} \\
+			&= \frac{1}{T} \sum_{r = -\infty}^{+ \infty} X_A \left(j\frac{\omega}{T}+j\frac{2 \pi r}{T}\right)
+		\end{align*}
 		\[  \]
 	\end{itemize}
 \end{frame}

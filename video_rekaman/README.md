@@ -19,3 +19,10 @@
 
     - [Kelas B](https://drive.google.com/file/d/1gER8igbjMknpnJD0kgMQOEhkUXQnDpXe/view?usp=sharing)
 
+4. Pertemuan 4 - Transformasi Fourier Waktu Diskrit
+    
+    - [Kelas A](https://drive.google.com/file/d/1D2jg0ro7fxdwJvd2c3z-cnCx8dn6yLPr/view?usp=sharing)
+
+5. Pertemuan 5 - Transformasi Z
+
+    - [Kelas A](https://drive.google.com/file/d/1T988txsQdA4WeLVTncWneSVstgK9DRB-/view?usp=sharing)

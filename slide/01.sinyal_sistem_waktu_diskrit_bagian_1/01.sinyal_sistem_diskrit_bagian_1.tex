@@ -66,9 +66,9 @@
 		\item Sama seperti di domain waktu kontinyu, pada domain waktu diskrit juga memiliki \textbf{basic sequence}.
 		\item Basic sequence yang pertama adalah \textbf{unit sample sequence} atau \textbf{unit impulse sequence} yang diilustrasikan pada slide selanjutnya.
 		\item Unit sample dinotasikan dengan $ \delta(n) $.
-		\item $ \delta(n) $ bernilai 1 (\textbf{unity}) di $ n = 0 $ dan $ \delta(n) $ bernilai 0 jika $n \neq 0$ 
-		\item Jika dibandingkan dengan unit sample pada domain waktu kontinyu, unit sample pada domain waktu diskrit ini memiliki definisi yang lebih pasti.
-		\item Masih ingat unit sample pada domain waktu kontinyu?
+		\item $ \delta(n) $ bernilai 1 (\textbf{unity}) di $ n = 0 $, dan $ \delta(n) $ bernilai 0 jika $n \neq 0$ 
+		\item Jika dibandingkan dengan unit sample waktu kontinyu, unit sample waktu diskrit ini memiliki definisi yang lebih pasti.
+		\item Masih ingat unit sample waktu kontinyu?
 	\end{itemize}
 \end{frame}
 
@@ -82,11 +82,11 @@
 	\frametitle{Unit Sample Waktu Kontinyu}
 	\begin{multicols}{2}
 		\begin{center}
-			\includegraphics[width=0.7\linewidth]{img/img004}
+			\includegraphics[width=\linewidth]{img/img005}
 		\end{center}
-	\columnbreak
+		\columnbreak
 		\begin{center}
-			\includegraphics[width=0.9\linewidth]{img/img005}
+			\includegraphics[width=0.7\linewidth]{img/img004}
 		\end{center}
 	\end{multicols}
 \end{frame}
@@ -156,11 +156,11 @@
 	\begin{itemize}
 		\item Basic sequence yang ketiga adalah \textbf{real exponential sequence}, $ x(n) = (\alpha)^n $.
 		\item Jika $ 0 < \alpha < 1 $ maka eksponensial turun.
+		\begin{center}
+			\includegraphics[width=0.8\linewidth]{img/img009}
+		\end{center}
 		\item Jika $ \alpha > 1 $ maka eksponensial naik.
 	\end{itemize}
-	\begin{center}
-		\includegraphics[width=0.8\linewidth]{img/img009}
-	\end{center}
 \end{frame}
 
 \begin{frame}
@@ -206,8 +206,9 @@
 
 \begin{frame}{Merepresentasi sinyal dengan menggunakan basic sequence}
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{img/img012}
+		\includegraphics[width=0.6\linewidth]{img/img012}
 	\end{center}
+	$ x(n) $ dapat direpresentasikan sebagai linear combination dari weighted delayed unit samples
 \end{frame}
 
 \section{Sistem}
@@ -223,15 +224,15 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Special Class of System}
+	\frametitle{Sifat Sistem}
 	\begin{itemize}
-		\item Dalam mengkarakterisasi sistem, perlu memperhatikan kelas dari sistem tersebut.
-		\item Kelas khusus dari sistem: 
+		\item Dalam mengkarakterisasi sistem, perlu memperhatikan sifat dari sistem tersebut.
+		\item Sifat khusus dari sistem: 
 		\begin{enumerate}
 			\item \textbf{Linear}
 			\item \textbf{Shift-invariant}
 		\end{enumerate}
-		\item Keduanya adalah independent, namun jika digabungan menghasilkan kelas khusus yaitu Linear \& Shift-invariant (\textbf{LSI}).
+		\item Keduanya adalah independent, namun jika digabungan menghasilkan sifat khusus yaitu \textbf{Linear \& Shift-invariant} (\textbf{LSI}).
 		\item Mirip dengan linear \& time-invariant di domain waktu kontinyu.
 	\end{itemize}
 \end{frame}
@@ -266,8 +267,8 @@
 \begin{frame}
 	\frametitle{Linear Shift-Invariance}
 	\begin{itemize}
-		\item Misalkan ada input \[ x(n) = \sum_{k = -\infty}^{k = +\infty} x(k)\delta(n-k) \]
-		maka akan menghasilkan \[ y(n) = \sum_{k = -\infty}^{k = +\infty} x(k)h(n-k) \]
+		\item Misalkan ada input dalam bentuk weighted delayed units samples \[ x(n) = \sum_{k = -\infty}^{k = +\infty} x(k)\delta(n-k) \]
+		maka akan menghasilkan weighted delayed units samples response \[ y(n) = \sum_{k = -\infty}^{k = +\infty} x(k)h(n-k) \]
 		\item Dari sini bisa kita pahami bahwa untuk mengkarakterisasi suatu sistem, kita bisa melihat unit sample response-nya.
 		\item Disebut juga \textbf{convolution sum} (analogi dari convolution  integral di domain waktu kontinyu)
 	\end{itemize}
@@ -296,7 +297,7 @@
 		\begin{center}
 			\includegraphics[width=0.3\linewidth]{img/img014}
 		\end{center}
-		\item Implikasinya adalah dalam cascade system:
+		\item Implikasinya adalah dalam sistem cascade:
 		\begin{center}
 			\includegraphics[width=0.4\linewidth]{img/img015}
 		\end{center}
@@ -304,10 +305,27 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Convolution}
+	\frametitle{Convolution Sum}
 	\begin{center}
 		\includegraphics[height=0.8\textheight]{img/img016}
 	\end{center}
+\end{frame}
+
+\section{Belajar Mandiri}
+
+\begin{frame}
+	\frametitle{Belajar Mandiri}
+	\begin{itemize}
+		\item Bab 1.1 hingga 1.2 dari bukunya\\ \textbf{Alan V. Oppenheim, Ronald W. Schafer - Digital Signal Processing-Prentice-Hall (1975)}.
+	\end{itemize}
+\end{frame}
+
+\section{Tugas 2}
+
+\begin{frame}
+	\frametitle{Tugas 2}
+	Tugas akan diberikan di akhir perkuliahan.\\
+	Dikumpulkan 1 hari sebelum perkuliahan berikutnya.
 \end{frame}
 
 \section{Referensi}
@@ -315,7 +333,7 @@
 \begin{frame}
 	\frametitle{Referensi}
 	\begin{itemize}
-		\item Oppenheim, A. V., \& Schafer, R. W. (2014). Discrete-Time Signal Processing 3rd Edition. Boston: Pearson.
+		\item Alan V. Oppenheim, Ronald W. Schafer - Digital Signal Processing-Prentice-Hall (1975)
 	\end{itemize}
 \end{frame}
 

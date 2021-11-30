@@ -63,7 +63,7 @@ figs-within-sections
 \color #008000
 \end_index
 \leftmargin 3cm
-\topmargin 3cm
+\topmargin 4cm
 \rightmargin 3cm
 \bottommargin 3cm
 \secnumdepth 2
@@ -87,11 +87,11 @@ figs-within-sections
 \begin_body
 
 \begin_layout Title
-Tugas 2 - Pengolahan Sinyal Digital
+Tugas 2 Pengolahan Sinyal Digital
 \end_layout
 
 \begin_layout Author
-Semester Gasal 2021/2022
+Tim Dosen Pengampu
 \end_layout
 
 \begin_layout Enumerate
@@ -143,7 +143,7 @@ status open
 \begin_inset Formula $x(n)$
 \end_inset
 
- sebagai linear combination dari weighted dan delayed unit samples.
+ dalam bentuk linear combination dari weighted dan delayed unit samples.
 \end_layout
 
 \begin_layout Enumerate

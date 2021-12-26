@@ -1,0 +1,42 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[indonesian]{babel}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{float} 
+
+\title{Tugas 10 - Pengolahan Sinyal Digital\\
+		Circular Convolution}
+
+% remove spacing around date:
+\usepackage{titling}
+\predate{}
+\postdate{}
+\date{}
+
+\begin{document}
+	\maketitle
+	\date{}
+	\begin{enumerate}
+		\item Diketahui $ x(n) $ dan $ h(n) $ adalah dua finite length sequences, keduanya memiliki panjang $ N $.
+		\begin{enumerate}
+			\item Berapa panjang maksimum yang mungkin dicapai hasil linear convolution dari $ x(n) $ dengan $ h(n) $ ?
+			\item Berapa panjang maksimum yang mungkin dicapai hasil N-point circula convolution dari $ x(n) $ dengan $ h(n) $ ?
+		\end{enumerate}
+		\item Diketahui 4-point sequences yang ditampilkan oleh Gambar \ref{fig:img01}.
+		\begin{enumerate}
+			\item Gambarkan linear convolution dari $ x(n) $ dengan $ x(n) $.
+			\item Gambarkan 4-points circular convolution dari $ x(n) $ dengan $ x(n) $.
+		\end{enumerate}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{img/img01}
+			\caption{4-point sequences}
+			\label{fig:img01}
+		\end{figure}
+	\end{enumerate}
+\end{document}

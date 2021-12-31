@@ -10,3 +10,4 @@ referensi/*/*.lyx
 referensi/*/*.odt
 *.lyx~
 slide/*/*.pdf
+*.ods#

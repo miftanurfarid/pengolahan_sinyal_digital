@@ -1,0 +1,37 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[indonesian]{babel}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{float} 
+
+\title{Tugas 14 - Pengolahan Sinyal Digital\\
+	Disain Filter Digital FIR}
+
+% remove spacing around date:
+\usepackage{titling}
+\predate{}
+\postdate{}
+\date{}
+
+\begin{document}
+	\maketitle
+	\date{}
+	\begin{enumerate}
+		\item Dalam metode window dalam desain filter FIR lowpass, kita sudah tunjukkan bahwa lebar transisi dari filter yang dihasilkan tergantung pada lebar main lobe dari transformasi Fourier dari windownya. Untuk tujuan dari permasalahan ini, kita definisikan main lobe sebagai interval simetris antara frekuensi negatif dan positif pertama di mana $ W(e^{j\omega}) = 0 $. Perhatikan tiga window berikut:
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\linewidth]{img/img01}
+		\end{figure}
+		
+		(Jika $ \alpha = \beta = 0.5 $ maka ini adalah Hanning window. Jika $ \alpha = 0.54 $ dan $ \beta = 0.46 $ maka ini adalah Hamming window.)\\
+		
+		
+		Tentukan transformasi Fourier dari tiap window di atas. Tentukan juga lebar dari main lobe dari tiap window tersebut, asumsikan $ N >> 1 $
+	\end{enumerate}
+\end{document}

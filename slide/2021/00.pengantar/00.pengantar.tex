@@ -1,0 +1,136 @@
+\documentclass[pdflatex,compress]{beamer}
+
+%\usetheme[dark,framenumber,totalframenumber]{ElektroITK}
+\usetheme[darktitle,framenumber,totalframenumber]{ElektroITK}
+
+\usepackage{lipsum}
+
+\title{PENGOLAHAN SINYAL DIGITAL}
+\subtitle{Pengantar Pengolahan Sinyal Digital}
+
+\author{Tim Dosen Pengampu}
+
+\begin{document}
+
+\maketitle
+
+\section{Kontrak Perkuliahan}
+
+\subsection{Deskripsi Mata Kuliah}
+
+\begin{frame}
+	\frametitle{Deskripsi Mata Kuliah}
+	\begin{itemize}
+		\item Teknologi pengolahan sinyal digital (digital signal processing/ DSP) dan berbagai pengembangannya memberikan dampak terhadap kehidupan modern manusia. 
+		\item Tanpa DSP, kita tidak akan memiliki audio atau video digital; digital recording; CD, DVD, MP3 player, iPhone, and iPad; kamera digital; telepon digital atau pun seluler; satelit digital dan TV; atau pun jaringan kabel dan nirkabel/ wireless.
+		\item Peralatan medis menjadi lebih efisien. Tidak mungkin kita memperoleh hasil diagnosis yang presisi tanpa elektrokardiografi digital (ECG), atau radiografi digital dan segala citra medis.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Kita juga hidup dengan cara yang berbeda sejak adanya sistem voice recognition, speech synthesis dan sistem editing gambar dan video.
+		\item Tanpa DSP, ilmuan, engineer, dan teknokrat tidak akan memiliki tools yang powerfull untuk menganalisa dan memvisualisasikan data dan mendemonstrasikan desain mereka.
+		\item Oleh sebab itu, pada Mata Kuliah ini mahasiswa akan dibekali konsep dasar dari pengolahan sinyal digital.
+		\item Kemudian perancangan filter FIR dan IIR secara simulasi akan diajarkan. Dan di akhir perkuliahan akan diajarkan bagaimana menganalisa spektrum frekuensi hasil dari filter.
+		\item Dengan mengikuti perkuliahan ini, diharapkan mahasiswa mampu merancang suatu sistem pengolahan digital pada segala bidang Teknik Elektro.
+	\end{itemize}
+\end{frame}
+
+\subsection{Capaian Pembelajaran Mata Kuliah (CPMK)}
+
+\begin{frame}
+	\frametitle{Capaian Pembelajaran Mata Kuliah}
+	\begin{itemize}
+		\item Mahasiswa mampu merancang suatu sistem pengolahan digital secara simulasi.
+	\end{itemize}
+\end{frame}
+
+\subsection{Bahan Kajian}
+
+\begin{frame}{Bahan Kajian}
+	\begin{enumerate}
+		\item Sinyal dan sistem waktu diskrit.
+		\item Transformasi Fourier waktu diskrit,
+		\item Transformasi Z \& Invers Transformasi Z.
+		\item Deret Fourier diskrit dan Transformasi Fourier Diskrit.
+		\item Circular convolution.
+		\item Representasi jaringan digital linear.
+		\item Struktur jaringan dari sistem infinite impulse response (IIR).
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Bahan Kajian}
+	\begin{enumerate}
+		\setcounter{enumi}{7}
+		\item Struktur jaringan dari sistem finite impulse response (FIR) dan efek parameter kuantisasi dalam struktur filter digital.
+		\item Disain filter IIR digital.
+		\item Filter Butterworth digital.
+		\item Disain filter FIR digital.
+		\item Komputasi dari transformasi Fourier diskrit/ DFT.
+	\end{enumerate}
+\end{frame}
+
+\subsection{Pustaka}
+
+\begin{frame}
+	\frametitle{Pustaka}
+	\begin{itemize}
+		\item Pustakan utama:
+		\begin{enumerate}
+			\item Oppenheim, A. V., \& Schafer, R. W. (2014). Discrete-Time Signal Processing 3rd Edition. Boston: Pearson.
+			\item Tan, L. \& Jiang, J. (2019). Digital Signal Processing. Fundamentals and Applications 3rd Edition. Cambridge: AcademiC Press.
+		\end{enumerate}
+		\item Pustaka pendukung
+		\begin{enumerate}
+			\item Schilling, R. J. \& Harris, S.L. (2011). Fundamentals of Digital Signal Processing using MATLAB. Boston:
+			Cengage Learning.
+			\item Referensi lainnya yang mendukung perkuliahan ini. Bisa berupa buku, jurnal, dll.
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\subsection{Jenis dan Bobot Evaluasi}
+
+\begin{frame}{Jenis dan Bobot Evaluasi}
+	\begin{enumerate}
+		\item Kehadiran: 10 \%
+		\item Tugas: 10 \%
+		\item Kuis: 20 \%
+		\item UTS: 30 \%
+		\item UAS: 30 \%
+	\end{enumerate}
+\end{frame}
+
+\subsection{Tools}
+
+\begin{frame}
+	\frametitle{Tools}
+	\begin{itemize}
+		\item Tools yang akan digunakan dalam perkuliahan ini adalah Python IDE (IDLE, Spyder, Google Colab, dll)
+	\end{itemize}
+\end{frame}
+
+\section{Pengantar Pengolahan Sinyal Digital}
+
+\begin{frame}
+	\frametitle{Pengantar Pengolahan Sinyal Digital}
+	\begin{itemize}
+		\item Digital signal processing (DSP) memiliki peran yang penting di dalam signal processing.
+		\item Keuntungan digital signal processing daripada analog signal processing adalah fleksibilitasnya.
+		\item Akibatnya, penerapan dari DSP yang sangat lah luas.
+		\item Contohnya adalah speech processing, baik dalam hal analisis maupun sintesis dari speech.
+		\item Dalam sistem komunikasi, DSP digunakan dalam pengkodean dan multipleksing. Bahkan filter sudah banyak digantikan dengan DSP, dari analog filter menjadi digital filter.
+	\end{itemize}
+\end{frame}
+
+\section{Tugas 1}
+
+\begin{frame}
+	\frametitle{Tugas 1}
+	\begin{itemize}
+		\item Apakah kalian bisa menyebutkan contoh penerapan DSP di masing-masing bidang yang ada di Teknik Elektro ITK?
+		\item Dikumpulkan 1 hari sebelum perkuliahan berikutnya.
+	\end{itemize}
+\end{frame}
+\end{document}

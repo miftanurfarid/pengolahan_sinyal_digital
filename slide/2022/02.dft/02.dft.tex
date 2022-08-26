@@ -12,12 +12,12 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{multicol}
-\usepackage{lipsum}
+\usepackage{extarrows}
 
 \newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
 
 \title{DIGITAL SIGNAL PROCESSING}
-\subtitle{INTRODUCTION}
+\subtitle{The Discrete Fourier transform}
 
 \author{Mifta Nur Farid}
 
@@ -27,6 +27,80 @@
 
 \section{Introduction}
 
-\subsection{}
+\begin{frame}
+	\frametitle{Introduction}
+	\begin{itemize}
+		\item In previous chapters, we have seen how to represent a sequence in terms of a linear combination of complex exponentials using the discrete-time Fourier transform (DTFT) and how the sequence values may be used as the coefficients in a power series expansion of a complex-valued function of $ z $.
+		\item For finite-length sequences there is another representation, called the discrete Fourier transform (DFT).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction}
+	\begin{itemize}
+		\item Unlike the DTFT, which is a continuous function of a continuous variable, $ w $ , the DFT is a sequence that corresponds to samples of the DTFT.
+		\item Such a representation is very useful for digital computations and for digital hardware implementations
+		\item In this chapter, we look at the DFT, explore its properties, and see how it may be used to perform such tasks as digital filtering and evaluating the frequency response of a linear shift-invariant system.
+	\end{itemize}
+\end{frame}
+
+\section{Discrete Fourier Series}
+
+\begin{frame}
+	\frametitle{Discrete Fourier Series}
+	Let $ \tilde{x}(n) $ be a periodic sequence with a period $ N $:
+	\begin{equation*}
+		\tilde{x} = \tilde{x}(n + N)
+	\end{equation*}
+	Although, strictly speaking, $ \tilde{x}(n) $ does not have a Fourier transform because it is not absolutely summable, it can be expressed in terms of a discrete Fourier series (DFS) as follows:
+	\begin{equation}\label{6.1}
+		\tilde{x}(n) = \frac{1}{N} \sum\limits_{k=0}^{N-1} \tilde{X}(k)e^{j2 \pi nk / N}
+	\end{equation}
+\end{frame}
+
+\begin{frame}{Discrete Fourier Series}
+	which is a decomposition of $ \tilde{x}(n) $ into a sum of $ N $ harmonically related complex exponentials. The values of the discrete Fourier series coefficients, $ \tilde{X}(k) $, may be derived by multiplying both sides of this expansion by $ e^{-j2\pi nl/N} $ summing over one period, and using the fact that the complex exponentials are orthogonal:
+	\begin{equation*}
+		\sum\limits_{k=0}^{N-1} e^{j2 \pi n (k-l)/N} =
+		\begin{cases}
+			N & k = l \\
+			0 & k \neq l
+		\end{cases}
+	\end{equation*}
+\end{frame}
+
+\begin{frame}{Discrete Fourier Series}
+	The result is
+	\begin{equation}\label{6.2}
+		\tilde{X}(k) = \sum\limits_{k=0}^{N-1} \tilde{x}(n)e^{-j2 \pi n k} / N
+	\end{equation}
+	Note that the DFS coefficients are periodic with a period $ N $:
+	\begin{equation*}
+		\tilde{X}(k+N) = \tilde{X}(k)
+	\end{equation*}
+	Equations \ref{6.1} and \ref{6.2} form a DFS pair, and we write
+	\begin{equation*}
+		\tilde{x}(n) \xLeftrightarrow{DFT} \tilde{X}(k)
+	\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{EXAMPLE 6.2.1}
+	Let us find the discrete Fourier series representation for the sequence
+	\begin{equation*}
+		\tilde{x}(n) = \sum\limits_{k=-\infty}^{\infty} x(n-10k)
+	\end{equation*}
+	where
+	\begin{equation*}
+		x(n) =
+		\begin{cases}
+			1 & 0 \leq n < 5 \\
+			0 & \text{else}
+		\end{cases}
+	\end{equation*}
+	Note that $ P(n) $ is a periodic sequence with a period $ N = 10 $. Therefore, the DFS coefficients are
+	\begin{equation*}
+		\tilde{X}(k) = \sum\limits_{n = 0}^9 \tilde{x}(n) e^{-j2 \pi nk / 10} = \sum\limits_{n = 0}^4 e^{-j2 \pi nk / 10}
+	\end{equation*}
+\end{frame}
 
 \end{document}

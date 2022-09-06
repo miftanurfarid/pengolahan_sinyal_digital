@@ -30,19 +30,72 @@
 \begin{frame}
 	\frametitle{Introduction}
 	\begin{itemize}
-		\item In Signal and Systems, we've been discussing the Fourier and Z-transforms.
-		\item the Fourier and Z-transforms provide us with a set of important 		analytical tools for representing discrete time signals, and also for dealing with discrete time systems.
-		\item For example, that through the use of the Fourier transform or the Z-transform, we could convert convolution in the time domain to multiplication in either the frequency domain in the Fourier transform case, or more generally, in the Z domain in the Z-transform case.
+		\item In Signal \& Systems:\\
+		Fourier Transfrom (FT) \& z-Transfrom (z-T) $\rightarrow$ important analytic tools for representing discrete time signals \& systems.
+		\item Convolution in time domain $\rightarrow$ multiplication in freq. domain in FT or in z domain in z-T.
+		\item FT \& z-T are primary analytical tools but hard to implementing.
+		\item FT is a function of a continuous variable $\omega$ $\rightarrow$ compute at infinite number of frequencies. $$ H(e^{j\omega}) = \sum\limits_{n=-\infty}^{+\infty} h(n)e^{-j \omega n} $$
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Introduction}
 	\begin{itemize}
-		\item It would be hard to implementing, for example, a discrete time system by first computing the Fourier transform of the sequences, multiplying the Fourier transforms together, and then computing the inverse transform.
-		\item One of the reasons that that's obviously a difficult thing to do computationally is that we saw, as we discussed, for example, the Fourier transform, that the Fourier transform is a function of a continuous variable.
-		\item The $ \Omega $ in the Fourier transform is a continuous variable. So
-		that, in fact, if we wanted to compute the Fourier transform explicitly, we would have to compute it at an infinite number of frequencies. Similarly, we have a situation like that for the Z-transform.
+		\item Another transform $\rightarrow$ the discrete Fourier trasform (DFT)
+		\item Similar to FT and z-T, convolution $\rightarrow$ multiplication.
+		\item Similar and also different properties to FT and z-T.
 	\end{itemize}
+\end{frame}
+
+\section{The Discrete Fourier Series}
+
+\begin{frame}
+	\frametitle{The Discrete Fourier Series}
+	\begin{center}
+		\includegraphics[width=\linewidth]{img/img01}
+	\end{center}
+\end{frame}
+
+\begin{frame}{The Discrete Fourier Series}
+	\begin{center}
+		\includegraphics[width=0.5\linewidth]{img/img03}
+	\end{center}
+\end{frame}
+
+\begin{frame}{The Discrete Fourier Series}
+	\begin{center}
+		\includegraphics[width=\linewidth]{img/img04}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problems}
+	\begin{center}
+		\includegraphics[width=\linewidth]{img/img05}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Problems}
+	\begin{center}
+		\includegraphics[width=\linewidth]{img/img06}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Problems}
+	\begin{center}
+		\includegraphics[width=\linewidth]{img/img07}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Problems}
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{img/img08}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Problems}
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{img/img09}
+	\end{center}
 \end{frame}
 
 \end{document}

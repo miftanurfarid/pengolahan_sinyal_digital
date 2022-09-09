@@ -32,7 +32,7 @@
 	\begin{itemize}
 		\item In Signal \& Systems:\\
 		Fourier Transfrom (FT) \& z-Transfrom (z-T) $\rightarrow$ important analytic tools for representing discrete time signals \& systems.
-		\item Convolution in time domain $\rightarrow$ multiplication in freq. domain in FT or in z domain in z-T.
+		\item Convolution in time domain $\rightarrow$ multiplication in freq. domain for FT or in z domain for z-T.
 		\item FT \& z-T are primary analytical tools but hard to implementing.
 		\item FT is a function of a continuous variable $\omega$ $\rightarrow$ compute at infinite number of frequencies. $$ H(e^{j\omega}) = \sum\limits_{n=-\infty}^{+\infty} h(n)e^{-j \omega n} $$
 	\end{itemize}
@@ -51,7 +51,17 @@
 \begin{frame}
 	\frametitle{The Discrete Fourier Series}
 	$ x(n) $ finite length
-	
+	\begin{center}
+		\includegraphics[width=\linewidth]{img/01}
+	\end{center}
+\end{frame}
+
+\begin{frame}{The Discrete Fourier Series}
+	$ \tilde{x}(n) $ periodic\\
+	$ \tilde{x}(n) = x(n) + x(n+N) + x(n+2N) + \dots $
+	\begin{center}
+		\includegraphics[width=\linewidth]{img/02}
+	\end{center}
 \end{frame}
 
 \begin{frame}

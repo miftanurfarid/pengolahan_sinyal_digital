@@ -15,7 +15,7 @@ plt.xlabel(r'N-1 n')
 plt.xticks(n)
 figure1 = plt.gcf()  # get current figure
 figure1.set_size_inches(10, 4) 
-plt.savefig(filename, format='svg', dpi=1200)
+#plt.savefig(filename, format='svg', dpi=1200)
 
 # Plot Periodic Sequence
 filename2 = '../../../img/2022/02.dft/02.periodic_sequence.svg'
@@ -31,4 +31,4 @@ plt.xticks(n2)
 figure2 = plt.gcf()  # get current figure
 figure2.set_size_inches(10, 4) 
 plt.grid()
-plt.savefig(filename2, format='svg', dpi=1200, bbox_inches='tight')
+#plt.savefig(filename2, format='svg', dpi=1200, bbox_inches='tight')

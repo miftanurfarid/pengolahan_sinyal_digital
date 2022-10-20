@@ -11,3 +11,5 @@ referensi/*/*.odt
 *.lyx~
 slide/*/*.pdf
 *.ods#
+*.odg#
+*.odt#

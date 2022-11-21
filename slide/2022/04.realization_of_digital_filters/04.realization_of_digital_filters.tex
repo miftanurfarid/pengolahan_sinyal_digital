@@ -24,118 +24,128 @@
 
 \begin{document}
 
-% ----------------------------------------------------------------------------
-% *** Titlepage <<<
-% ----------------------------------------------------------------------------
 \maketitle
-% ----------------------------------------------------------------------------
-% *** END of Titlepage >>>
-% ----------------------------------------------------------------------------
 
-\section{My section}
-\subsection{My subsection}
+\section{Pendahuluan}
 
-% ----------------------------------------------------------------------------
-% *** Test frame <<<
-% ----------------------------------------------------------------------------
 \begin{frame}
-\frametitle{A first test frame}
-\lipsum[1]
+	\frametitle{Sub-CPMK}
+	Mahasiswa mampu merealisasikan filter-filter digital berdasarkan fungsi transfer maupun karakteristik filter lainnya.
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame >>>
-% ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
-% *** Test frame with overflow <<<
-% ----------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Test frame with overflow}
-\lipsum%
+	\frametitle{Bahan Kajian}
+	\begin{itemize}
+		\item Direct Realization
+		\item Direct Canonic Realization
+		\item State-Space Realization
+		\item Lattice Realization
+		\item Cascade Realization
+		\item Parallel Realization
+	\end{itemize}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame >>>
-% ----------------------------------------------------------------------------
 
-
-% ----------------------------------------------------------------------------
-% *** Test frame with overflow <<<
-% ----------------------------------------------------------------------------
-%\begin{frame}
-%\frametitle{The is a test frame with a pretty long frame title}
-%\lipsum
-%\end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame >>>
-% ----------------------------------------------------------------------------
-
-\subsection{My subsection 2}
-% ----------------------------------------------------------------------------
-% *** Test frame with Itemize <<<
-% ----------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Test frame with itemize}
-
-\begin{itemize}
-    \item<1-> firstly
-    \item<2-> secondly
-        \begin{itemize}
-            \item sub-item
-            \item another sub-item
-        \end{itemize}
-      \item<3-> thirdly
-\end{itemize}
-
+	\frametitle{Pengantar}
+	\begin{itemize}
+		\item Hal-hal yang telah kita pelajari:
+		\begin{enumerate}
+			\item Dasar-dasar dalam menganalisis suatu sinyal
+			\item Karakterisasi dan analisis sistem waktu diskrit
+		\end{enumerate}
+		\item Selanjutnya akan kita bahas desain sistem waktu-diskrit yang dapat digunakan di dalam DSP.
+		\item Langkah-langkah dalam mendesain filter digital
+		\begin{enumerate}
+			\item Aproksimasi
+			\item Realisasi
+			\item Analisis kesalahan aritmatika
+			\item Implementasi
+		\end{enumerate}
+	\end{itemize}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame with Itemize >>>
-% ----------------------------------------------------------------------------
 
-
-% ----------------------------------------------------------------------------
-% *** Test frame with Math <<<
-% ----------------------------------------------------------------------------
-\begin{frame}
-\frametitle{A math frame}
-
-\begin{theorem}[Pythagoras]
-The square of the hypotenuse of a \alert{right} triangle is equal to the sum of the squares on the other two sides:
-\[
-a^2 + b^2 = c^2.
-\]
-\end{theorem}
-\begin{proof}
-Straightforward.
-\end{proof}
-
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item \textbf{Aproksimasi:}  menghasilkan fungsi transfer yang memenuhi spesifikasi yang diinginkan.
+		\item Metode-metode aproksimasi dapat dikategorikan menjadi:
+		\begin{enumerate}
+			\item \textbf{Direct:} permasalahan diselesaikan secara langsung dalam domain-$ z $.
+			\item \textbf{Indirect:} fungsi transfer waktu kontinyu didapatkan terlebih dahulu kemudian dikonversi ke dalam fungsi transfer waktu diskrit.
+		\end{enumerate}
+	\end{itemize}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame with Math >>>
-% ----------------------------------------------------------------------------
 
-
-% ----------------------------------------------------------------------------
-% *** Test frame with Environments <<<
-% ----------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Environments}
-
-\begin{definition}
-A \textbf{prime number} (or a prime) is a natural number which has exactly two distinct natural number divisors: 1 and itself.
-\end{definition}
-
-\begin{exampleblock}{Example}
-The first five prime numbers are $2$, $3$, $5$, $7$, and $11$.
-\end{exampleblock}
-
-\begin{alertblock}{Alert block}
-Note that $1$ is not a prime number.
-\end{alertblock}
-
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		
+		\item Metode-metode aproksimasi dapat dikategorikan menjadi:
+		\begin{enumerate}
+			\item \textbf{Closed-form:} permasalahan diselesaikan melalui beberapa langkah desain yang sedikit dan menggunakan beberapa persamaan \textit{closed-form}.
+			\item \textbf{Iterative:} solusi awal diasumsikan terlebih dahulu, kemudian dengan menerapkan metode optimisasi, secara bertahap didapatkan solusi yang sesuai dengan spesifikasi yang diinginkan.
+		\end{enumerate}
+		\item Metode aproksimasi yang dipilih berdasarkan:
+		\begin{enumerate}
+			\item yang sederhana
+			\item yang handal
+			\item yang menghasilkan disain yang tepat
+			\item membutuhkan usaha komputasi yang minimal, dst.
+		\end{enumerate}
+	\end{itemize}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame with Environments >>>
-% ----------------------------------------------------------------------------
 
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item \textbf{Realisasi} atau \textbf{sintesis}: proses menghasilkan jaringan atau struktur filter digital dari fungsi transfer atau karakteristik lain dari filter.
+		\item Metode-metode realisasi dapat dikategorikan menjadi
+		\begin{enumerate}
+			\item \textbf{Direct:} realisasi didapatkan secara langsung dari fungsi transfer waktu-diskrit yang diberikan.
+			\item \textbf{Indirect:} realisasi didapatkan secara tidak langsung dari purwarupa filter analog yang ekivalen.
+		\end{enumerate}
+		\item Pemilihan metode realisasi berdasarkan:
+		\begin{enumerate}
+			\item yang mudah diimplementasikan ke dalam bentuk rangkaian very-large-scale integrated (VLSI)
+			\item yang membutuhkan sedikit unit delay, adder, dan multiplier
+			\item yang tidak terlalu dipengaruhi oleh penggunaan aritmatika finite-precision dalam implementasinya, dst.
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Ketidaksempurnaan desain disebabkan oleh ketidakakuratan pemodelan, toleransi komponen-komponen, efek-efek nonlinear yang tidak biasa dan tidak terduga, dst.
+		\item Desain akan diterima selama ketidaksempurnaan tersebut tidak mengganggu spesifikasi yang diinginkan.
+		\item Di dalam filter digital, ketidaksempurnaan biasanya disebabkan oleh ketidaktepatan secara numerik. Sehingga perlu untuk dipelajari.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Pada tahap aproksimasi, koefisien dari fungsi transfer ditentukan menjadi presisi tingkat tinggi.
+		\item Namun dalam praktiknya, perangkat-perangkat keras yang digital memiliki kepresisian terbatas yang bergantung pada
+		\begin{enumerate}
+			\item panjangnya register yang digunakan untuk menyimpan suatu nilai
+			\item jenis sistem angka yang digunakan (signed-magnitude, 2's comlement)
+			\item jenis aritmatik yang digunakan (fixed-point, floating-point), dst.
+		\end{enumerate}
+		\item Akibatnya, koefisien filter harus dikuantisasi (rounded/ pembulatan atau truncated) sebelum disimpan di dalam register.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Saat koefisien fungsi transfer dikuantisasi, kesalahan akan muncul di dalam amplitudo dan fasa respons dari filter, yang umumnya disebut sebagai kesalahan kuantisasi (quantization errors)
+		\item Kesalahan tersebut dapat menyebabkan filter digital melanggar spesifikasi yang diinginkan dan dalam kasus yang lebih parah lagi dapat menyebabkan ketidaksetabilan.
+		\item Oleh sebab itu, proses desain tidak dapat dianggap selesai sampai efek \textbf{kesalahan aritmatika} pada kinerja filter diselidiki dan ditemukan cara untuk mengurangi masalah yang terkait dengan ketidaktepatan numerik.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item \textbf{Implementasi} filter digital dapat diasumsikan menjadi dua bentuk
+		\begin{enumerate}
+			\item 
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
 
 \end{document}

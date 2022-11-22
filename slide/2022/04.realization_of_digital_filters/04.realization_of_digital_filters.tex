@@ -17,6 +17,8 @@
 
 \newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
 
+\setbeamertemplate{caption}[numbered]
+
 \title{Pengolahan Sinyal Digital}
 \subtitle{Realisasi Filter Digital}
 
@@ -143,8 +145,101 @@
 	\begin{itemize}
 		\item \textbf{Implementasi} filter digital dapat diasumsikan menjadi dua bentuk
 		\begin{enumerate}
-			\item 
+			\item \textbf{software:} melibatkan simulasi struktur filter pada general-purpose digital computer, workstation, atau chip DSP
+			\item \textbf{hardware:} melibatkan konversi struktur filter menjadi perangkat keras khusus.
 		\end{enumerate}
+		\item Penerapan non-realtime $ \rightarrow $ software.
+		\item Penerapan realtime $ \rightarrow $ hardware.
+	\end{itemize}
+\end{frame}
+
+\section{Realisasi}
+
+\begin{frame}
+	\frametitle{Realisasi}
+	\begin{itemize}
+		\item Direct realization/ realisasi langsung yang paling banyak digunakan adalah
+		\begin{enumerate}
+			\item Direct
+			\item Direct canonic
+			\item State-space
+			\item Lattice
+			\item Parallel
+			\item Cascade
+		\end{enumerate}
+		\item Indirect realization: struktur filter analog yang direpresentasikan oleh wave characterization, akan ditransformasikan menjadi struktur filter digital.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Direct Realization}
+	\begin{itemize}
+		\item Sebuah filter yang dikarakterisasi oleh fungsi transfer orde-$ N $
+		\begin{equation}\label{8.1a}
+			H(z) = \frac{N(z)}{D(z)} = \frac{\sum\limits_{i=0}^{N}a_i z^{-i}}{1 + \sum\limits_{i=0}^{N}b_i z^{-i}}
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Direct Realization}
+	\begin{itemize}
+		\item Persamaan (\ref{8.1a}) dapat direpresentasikan sebagai
+		\begin{equation}\label{8.1b}
+			\frac{Y(z)}{X(z)} = H(z) = \frac{N(z)}{D(z)} = \frac{N(z)}{1 + D'(z)}
+		\end{equation}
+		yang mana
+		\begin{equation}\label{8.2a}
+			N(z) = \sum\limits_{i=0}^N a_i z^{-i}
+		\end{equation}
+		\begin{equation}\label{8.2b}
+			D'(z) = \sum\limits_{i=0}^N a_i z^{-i}
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Direct Realization}
+	\begin{itemize}
+		\item Persamaan (\ref{8.1b}) dapat direpresentasikan sebagai
+		\begin{align*}
+			Y(z) &= N(z)X(z) - D'(z)Y(z)
+		\end{align*}
+		atau
+		\begin{align*}
+			Y(z) = U_1(z)+U_2(z)
+		\end{align*}
+		yang mana
+		\begin{equation}\label{8.3a}
+			U_1(z) = N(z)X(z)
+		\end{equation}
+		\begin{equation}\label{8.3b}
+			U_2(z) = -D'(z)Y(z)
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Direct Realization}
+	\begin{itemize}
+		\item Oleh karena itu, realisasi dari $ H(z) $ dapat di-breakdown menjadi realisasi dari 2 fungsi transfer yang lebih sederhana, $ N(z) $ dan $ -D'(z) $, seperti yang ditunjukkan oleh Gambar \ref{fig:8.1}
+		\begin{figure}
+			\centering
+			\includegraphics[width=\linewidth]{img/img01}
+			\caption{Dekomposisi $ H(z) $ menjadi 2 fungsi transfer yang lebih sederhana}
+			\label{fig:8.1}
+		\end{figure}
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Direct Realization}
+	\begin{itemize}
+		\item Misalkan realisasi dari $ N(z) $. Dari persamaan (\ref{8.2a}) dan (\ref{8.3a})
+		\begin{align*}
+			U_1(z) = \left[ a_0 + z^{-1} N_1(z) \right] X(z)
+		\end{align*}
+		yang mana
+		\begin{align*}
+			N_1(z) = \sum\limits_{i = 1}^{N}a_i z^{-i+1}
+		\end{align*}
 	\end{itemize}
 \end{frame}
 

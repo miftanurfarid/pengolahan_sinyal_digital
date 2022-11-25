@@ -1,0 +1,130 @@
+\documentclass[pdflatex,compress,mathserif]{beamer}
+
+%\usetheme[dark,framenumber,totalframenumber]{ElektroITK}
+\usetheme[darktitle,framenumber,totalframenumber]{ElektroITK}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[bahasai]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{lipsum}
+
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+
+\title{Pengolahan Sinyal Digital}
+\subtitle{Realisasi Filter Digital}
+
+\author{Mifta Nur Farid}
+
+\begin{document}
+
+\maketitle
+
+\section{Pengantar}
+
+\begin{frame}
+	\frametitle{Pengantar}
+	\begin{itemize}
+		\item Kita telah mempelajari tentang dasar-dasar analisis sinyal, serta karakterisasi dan analisis sistem waktu diskrit.
+		\item Selanjutnya kita akan membahas lebih detail tentang desain dari sistem waktu diskrit.
+		\item Desain filter digital mencakup seluruh kegiatan mulai dari menentukan filter digital yang dibutuhkan hingga membangun purwarupa, mengujinya, dan menggunakannya.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Tahapan-tahapan yang dilalui dalam mendesain filter digital antara lain:
+		\begin{enumerate}
+			\item Aproksimasi
+			\item Realisasi
+			\item Mempelajari kesalahan aritmatik
+			\item Implementasi
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Aproksimasi: proses membuat fungsi transfer yang memenuhi spesifikasi yang diinginkan, bisa dari respon amplitudo atau fasa, atau juga respon time-domain dari filternya.
+		\item Metode yang ada untuk solusi aproksimasi dapat diklasifikasikan menjadi 2:
+		\begin{enumerate}
+			\item \textit{direct}: permasalahan diselesaikan langsung dalam domain-\textit{z}
+			\item \textit{indirect}: didapatkan terlebih dahulu fungsi transfer waktu kontinyu-nya, kemudian dikonversi menjadi fungsi transfer waktu diskrit.
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item \textbf{Aproksimasi}: proses membuat fungsi transfer yang memenuhi spesifikasi yang diinginkan, bisa dari respon amplitudo atau fasa, atau juga respon time-domain dari filternya.
+		\item Metode yang ada untuk solusi aproksimasi dapat diklasifikasikan menjadi 2:
+		\begin{enumerate}
+			\item \textit{direct}: permasalahan diselesaikan langsung dalam domain-\textit{z}
+			\item \textit{indirect}: didapatkan terlebih dahulu fungsi transfer waktu kontinyu-nya, kemudian dikonversi menjadi fungsi transfer waktu diskrit.
+		\end{enumerate}
+		\item Filter non-rekursif selalu didesain melalui metode \textit{direct}.
+		\item Sedangkan filter rekursif dapat didesain melalui metode \textit{direct} maupun \textit{indirect}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Metode aproksimasi juga dapat diklasifikasikan sebagai
+		\begin{enumerate}
+			\item \textit{closed-form}: permasalahan diselesaikan melalui langkah-langkah desain yang jumlahnya sedikit dengan menggunakan serangkaian persamaan \textit{closed-form}
+			\item \textit{iterative}: solusi awal diasumsikan terlebih dahulu, kemudian dengan penggunaan metode optimisasi, solusi ditingkatkan hingga didapatkan kriteria desain yang sesuai.
+		\end{enumerate}
+		\item Secara umum, seorang desainer menggunakan metode aproksimasi yang
+		\begin{enumerate}
+			\item sederhana
+			\item reliable/ handal
+			\item menghasilkan desain yang presisi
+			\item membutuhkan komputasi yang minimal, dll
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item \textbf{Realisasi} atau \textbf{sintesis}: proses menghasilkan struktur filter digital dari fungsi transfer atau karakterisasi lainnya dari suatu filter.
+		\item Struktur filter = realisasi dari fungsi transfer.
+		\item Sama seperti aproksimasi, metode realisasi dapat diklasifikasikan menjadi 2
+		\begin{enumerate}
+			\item \textit{direct}: realisasi didapatkan secara langsung dari fungsi transfer waktu diskrit.
+			\item \textit{indirect}: realisasi didapatkan secara tidak langsung dari prototipe filter analog yang ekivalen.
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Desainer biasanya tertarik pada realisasi yang
+		\begin{enumerate}
+			\item mudah diimplementasikan dalam very-large-scale integrated (VLSI) circuit form
+			\item membutuhkan jumlah unit delay, adder, dan multiplier yang sedikit
+			\item tidak terlalu terpengaruhi oleh finite-precision aritmatik di dalam pengimplementasiannya, dll
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Setiap alat-alat yang menggunakan DSP di dalamnya, memiliki ketidaksempurnaan.
+		\item Disebabkan oleh ketidakakuratan dari modelnya, toleransi komponen-komponennya, efek nonlinear yang tidak biasa dan tidak terduga, dll.
+		\item Desain yang diterima adalah desain yang tidak sempurna namun tidak melanggar spesifikasi yang diinginkan.
+		\item Ketidaksempurnaan dari filter digital umumnya disebabkan oleh ketidakpresisian numerik.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Pengantar}
+	\begin{itemize}
+		\item Saat proses aproksimasi, koefisian dari fungsi transfer ditentukan memiliki derajat presisi yang tinggi.
+	\end{itemize}
+\end{frame}
+
+\end{document}

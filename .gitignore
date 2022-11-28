@@ -15,3 +15,5 @@ slide/*/*.pdf
 *.odt#
 *.odp#
 referensi/*.pdf
+referensi/*/*/*.pdf
+referensi/*/*/*.pdf

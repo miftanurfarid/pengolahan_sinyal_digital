@@ -16,5 +16,5 @@ slide/*/*.pdf
 *.odp#
 referensi/*.pdf
 referensi/*/*/*.pdf
-referensi/*/*/*.pdf
+referensi/*/*/*/*.pdf
 *.epub

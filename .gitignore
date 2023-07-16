@@ -8,6 +8,7 @@
 referensi/*/*.pdf
 referensi/*/*.lyx
 referensi/*/*.odt
+referensi/lainnya
 *.lyx~
 slide/*/*.pdf
 *.ods#

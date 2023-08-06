@@ -1,0 +1,168 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language bahasa
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing double
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 2
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Tugas 4 - Pengolahan Sinyal Digital
+\end_layout
+
+\begin_layout Author
+Semester Gasal 2021/2022
+\end_layout
+
+\begin_layout Enumerate
+Tentukan apakah dari masing-masing sequence berikut ini memiliki transformasi
+ Fourier yang konvergen atau tidak! Mengapa demikian?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $x(n)=\left(\frac{1}{2}\right)^{n}u(n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $x(n)=u(n)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Dari masing-masing sequence berikut ini, gambarkan poles dan zeros dari
+ transformasi Z nya.
+ Sertakan juga Region of Convergence! Tentukan juga apakah sequence tersebut
+ memiliki transformasi Fourier yang konvergen atau tidak! Mengapa demikian?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\left(\frac{1}{3}\right)^{-n}u(n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(\frac{1}{2}\right)^{n}u(n)+\left(\frac{1}{3}\right)^{n}u(n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\delta(n)-\frac{1}{8}\delta(n-3)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(\frac{1}{2}\right)^{|n|}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Catatan:
+\end_layout
+
+\begin_layout Standard
+Pada pertemuan selanjutnya akan dipilih secara acak, baik mahasiswa yang
+ hadir secara luring maupun daring, untuk mengerjakan salah satu soal di
+ atas.
+ Hasil dari pengerjaan mahasiswa tersebut menjadi nilai tugas semua mahasiswa
+ satu kelas.
+\end_layout
+
+\end_body
+\end_document

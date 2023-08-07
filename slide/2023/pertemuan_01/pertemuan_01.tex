@@ -20,124 +20,114 @@
 \setbeamertemplate{caption}[numbered]
 
 \title{PENGOLAHAN SINYAL DIGITAL}
-\subtitle{Deret Taylor dan Analisis Galat}
+\subtitle{Pengantar Pengolahan Sinyal Digital}
 
-\author{Tim Dosen Pengampu}
+\author{Mifta Nur Farid}
 
 \begin{document}
 
-% ----------------------------------------------------------------------------
-% *** Titlepage <<<
-% ----------------------------------------------------------------------------
 \maketitle
-% ----------------------------------------------------------------------------
-% *** END of Titlepage >>>
-% ----------------------------------------------------------------------------
 
-\section{My section}
-\subsection{My subsection}
+\section{Konsep Dasar Pengolahan Sinyal Digital}
 
-% ----------------------------------------------------------------------------
-% *** Test frame <<<
-% ----------------------------------------------------------------------------
-\begin{frame}
-\frametitle{A first test frame}
-\lipsum[1]
+\begin{frame}{Skema Pengolahan Sinyal Digital}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{img/img01}
+	\end{figure}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame >>>
-% ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
-% *** Test frame with overflow <<<
-% ----------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Test frame with overflow}
-\lipsum%
+\section{Contoh Dasar Pengolahan Sinyal Digital dalam Diagram Blok}
+
+\subsection{Filter Digital}
+
+\begin{frame}{Blok Filter Digital Sederhana}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{img/img02}
+	\end{figure}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame >>>
-% ----------------------------------------------------------------------------
 
-
-% ----------------------------------------------------------------------------
-% *** Test frame with overflow <<<
-% ----------------------------------------------------------------------------
-%\begin{frame}
-%\frametitle{The is a test frame with a pretty long frame title}
-%\lipsum
-%\end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame >>>
-% ----------------------------------------------------------------------------
-
-\subsection{My subsection 2}
-% ----------------------------------------------------------------------------
-% *** Test frame with Itemize <<<
-% ----------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Test frame with itemize}
-
-\begin{itemize}
-    \item<1-> firstly
-    \item<2-> secondly
-        \begin{itemize}
-            \item sub-item
-            \item another sub-item
-        \end{itemize}
-      \item<3-> thirdly
-\end{itemize}
-
+\begin{frame}{Blok Filter Digital Sederhana}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img03}
+	\end{figure}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame with Itemize >>>
-% ----------------------------------------------------------------------------
 
+\subsection{Analisis Frekuensi Sinyal (Spektrum)}
 
-% ----------------------------------------------------------------------------
-% *** Test frame with Math <<<
-% ----------------------------------------------------------------------------
-\begin{frame}
-\frametitle{A math frame}
-
-\begin{theorem}[Pythagoras]
-The square of the hypotenuse of a \alert{right} triangle is equal to the sum of the squares on the other two sides:
-\[
-a^2 + b^2 = c^2.
-\]
-\end{theorem}
-\begin{proof}
-Straightforward.
-\end{proof}
-
+\begin{frame}{Sinyal Audio dan Spektrumnya}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{img/img04}
+	\end{figure}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame with Math >>>
-% ----------------------------------------------------------------------------
 
-
-% ----------------------------------------------------------------------------
-% *** Test frame with Environments <<<
-% ----------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Environments}
-
-\begin{definition}
-A \textbf{prime number} (or a prime) is a natural number which has exactly two distinct natural number divisors: 1 and itself.
-\end{definition}
-
-\begin{exampleblock}{Example}
-The first five prime numbers are $2$, $3$, $5$, $7$, and $11$.
-\end{exampleblock}
-
-\begin{alertblock}{Alert block}
-Note that $1$ is not a prime number.
-\end{alertblock}
-
+\begin{frame}{Sinyal Audio dan Spektrumnya}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img05}
+	\end{figure}
 \end{frame}
-% ----------------------------------------------------------------------------
-% *** END of Test frame with Environments >>>
-% ----------------------------------------------------------------------------
 
+\begin{frame}{Sinyal Suara dan Spektrum Suara}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img06}
+	\end{figure}
+\end{frame}
+
+\section{Gambaran Pengolahan Sinyal Digital dalam Penerapannya di Dunia Nyata }
+
+\subsection{Sistem Audio Crossover Digital}
+
+\begin{frame}{Two-band digital crossover}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img07}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Elimination of 60-Hz interference in electrocardiography (ECG)}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img08}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Simplified data compressor and Simplified data expander (decompressor)}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img09}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Simplified encoder of the CD recording system and Simplified decoder of the CD recording system}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img10}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Vibration signature analysis of the gearbox}
+	\begin{figure}
+		\includegraphics[width=0.5\linewidth]{img/img11}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Vibration signal and spectrum from the good condition gearbox}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img12}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Vibration signal and spectrum from the damaged gearbox}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{img/img13}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Image enhancement.}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{img/img14}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Applications of Digital Signal Processing}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{img/img15}
+	\end{figure}
+\end{frame}
 
 \end{document}

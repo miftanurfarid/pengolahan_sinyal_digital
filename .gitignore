@@ -5,6 +5,8 @@
 *.snm
 *.synctex.gz
 *.toc
+*.fls
+*.fdb_latexmk
 referensi/*/*.pdf
 referensi/*/*.lyx
 referensi/*/*.odt
@@ -19,5 +21,8 @@ referensi/*.pdf
 referensi/*/*/*.pdf
 referensi/*/*/*/*.pdf
 *.epub
-referensi/lainnya/Winser Alexander, Cranos M Williams - Digital Signal Processing_ Principles, Algorithms and System Design     (Instructor's Edu Resource last of 2, High-Res Figures)-Academic Press, A. P, AP (2016).7z
-referensi/lainnya/Winser Alexander, Cranos M Williams - Digital Signal Processing_ Principles, Algorithms and System Design (Instructor's Edu Resource 1 of 2, Solution Manual & Lectures) (Solutions)-Academic Press (201.7z
+*.7z
+*-eps-converted-to.pdf
+.gitignore
+slide/2023/pertemuan_01/pertemuan_01.pdf
+slide/2023/pertemuan_02/pertemuan_02.pdf

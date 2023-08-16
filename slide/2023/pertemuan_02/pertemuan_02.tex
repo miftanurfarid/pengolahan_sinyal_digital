@@ -308,8 +308,8 @@
     \begin{framed}
     \textbf{Pers. Euler}
         \begin{align}
-            \sin(x) = \frac{(e^{j2\pi 1000t} - e^{-j2\pi 1000t})}{2j} \\
-            \cos(x) = \frac{(e^{j2\pi 1000t} + e^{-j2\pi 1000t})}{2}
+            \sin(x) = \frac{(e^{jx} - e^{-jx})}{2j} \\
+            \cos(x) = \frac{(e^{jx} + e^{-jx})}{2}
         \end{align}
     \end{framed}
 \end{frame}
@@ -322,41 +322,16 @@
             &= 2.5 e^{j2 \pi 1000t} + 2.5 e^{-j2 \pi 1000t}
             \label{eq:lat.soal.1}
         \end{align}
-        \item kita tentukan koefisien dari deret Fourier dari Pers. (\ref{eq:lat.soal.1})
+        \item Pers. (\ref{eq:lat.soal.1}) adalah bentuk complex-exponential dari deret Fourier. Bentuk umum dari complex-exponential dari deret Fourier:
+        \begin{equation*}
+            x(t) = \sum_{k=-\infty}^{-\infty} c_k e^{jk\omega_0 t} = \sum_{k=-\infty}^{-\infty} c_k e^{jk 2\pi f_0 t}
+        \end{equation*}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Jawaban Latihan Soal 1}
     \begin{itemize}
-        \item Pers. koef. deret Fourier:
-        \begin{equation}
-            c_n = \frac{1}{T} \int_T x(t) e^{-j 2 \pi n f_0 t} dt
-        \end{equation}
-        \begin{align*}
-            f_0 &= 1000 \text{ Hz}\\
-            T &= \frac{1}{f_0} = \frac{1}{1000 \text{ Hz}} = 0.001 \text{ detik}
-        \end{align*}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Jawaban Latihan Soal 1}
-    \begin{itemize}
-        \item Koefisien deret Fourier, $c_n$, untuk komponen pertama $2.5 e^{j2 \pi 1000t}$
-        \begin{align*}
-            c_1 &= \frac{1}{T} \int_T x(t) e^{-j 2 \pi n f_0 t} dt \\
-            c_1 &= \frac{1}{0.001} \int_0^{0.001} 2.5 e^{j2 \pi 1000t} e^{-j 2 \pi n f_0 t} dt \\
-            c_1 &= \frac{1}{0.001} \int_0^{0.001} 2.5 dt \\
-            c_1 &= \frac{1}{0.001} 0.001 dt \\
-            c_1 &= 2.5
-        \end{align*}
-    \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Jawaban Latihan Soal 1}
-    \begin{itemize}
-        \item Koefisien deret Fourier, $c_n$, untuk komponen kedua $2.5 e^{-j2 \pi 1000t}$ akan memiliki hasil yang sama karena $n = -1$
-        \item sehingga koef. deret Fourier adalah $c_1 = 2.5$ dan $c_{-1} = 2.5$
+        \item Sehingga koef. deret Fourier adalah $c_1 = 2.5$ dan $c_{-1} = 2.5$
         \item dengan menggunakan magnitude dari koef., kita plot two-side spectrum dari original signal
         \begin{figure}
             \includegraphics[width=\linewidth]{./img/img12}
@@ -373,7 +348,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Latihan Soal 2 dan 3}
+\begin{frame}{Latihan Soal 2}
     \begin{enumerate}
         \setcounter{enumi}{1}
         \item Diketahui analog signal
@@ -385,16 +360,138 @@
             \item[a.] Gambarkan spectrum dari original signal
             \item[b.] Gambarkan spectrum dari sampled signal dari 0 hingga 20 kHz
         \end{enumerate}
-    
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Latihan Soal 3}
+    \begin{enumerate}
+        \setcounter{enumi}{2}
         \item Diketahui analog signal
         \begin{equation*}
-            x(t) = 5 \cos (2 \pi 2500 t) + 2 \cos (2 \pi 3200 t),~\text{ untuk } t \geq 0
+            x(t) = 5 \cos (2 \pi 1500 t) + 2 \cos (2 \pi 2200 t),~\text{ untuk } t \geq 0
         \end{equation*}
         dan sampling rate sebesar 8 kHz.
         \begin{enumerate}
             \item[a.] Gambarkan spectrum dari original signal
             \item[b.] Gambarkan spectrum dari sampled signal dari 0 hingga 20 kHz
         \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Latihan Soal 4}
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Diketahui analog signal
+        \begin{equation*}
+            x(t) = 3 \cos (2 \pi 2500 t) + 2 \cos (2 \pi 4200 t),~\text{ untuk } t \geq 0
+        \end{equation*}
+        dan sampling rate sebesar 8 kHz.
+        \begin{enumerate}
+            \item[a.] Gambarkan spectrum dari original signal
+            \item[b.] Gambarkan spectrum dari sampled signal dari 0 hingga 20 kHz
+        \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Rekonstruksi sinyal}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{img/img14.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Rekonstruksi sinyal}
+    \begin{enumerate}
+        \item Kondisi 1: $f_s = 2f_{max}$
+        \begin{itemize}
+            \item Dibutuhkan ideal lowpass reconstruction filter
+        \end{itemize}
+    \end{enumerate}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{img/img15.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Rekonstruksi sinyal}
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Kondisi 2: $f_s > 2f_{max}$
+        \begin{itemize}
+            \item Cukup practical lowpass reconstruction filter
+        \end{itemize}
+    \end{enumerate}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{img/img16.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Rekonstruksi sinyal}
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Kondisi 3: $f_s < 2f_{max}$
+        \begin{itemize}
+            \item Dibutuhkan ideal lowpass reconstruction filter
+            \item Terdapat aliasing, menyebabkan distorsi spektral
+            \item $f_\text{alias} = f_s - f$
+        \end{itemize}
+    \end{enumerate}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{img/img17.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Contoh Soal}
+    Diasumsikan analog signal $$ x(t) = 5 \cos(2\pi 2000 t) + 3\cos(2\pi 3000t),~\text{ untuk } t \geq 0 $$ dengan sampling rate 8 kHz
+    \begin{enumerate}
+        \item[a)] Gambarkan spektrum sampled signal 8 kHz
+        \item[b)] Gambarkan recovered analog signal spectrum jika ideal lowpass filter dengan cutoff-frequency 4 kHz is menggunakan filter dengan sampled signal (y(n) = x(n)) untuk merekonstruksi original signal.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{jawaban Contoh Soal}
+    \begin{enumerate}
+        \item[a)] Menggunakan persamaan Euler
+        $$x(t) = \frac{3}{2}e^{-j2 \pi 3000 t} + \frac{5}{2}e^{-j2 \pi 2000 t} + \frac{5}{2}e^{j2 \pi 2000 t} + \frac{3}{2}e^{j2 \pi 2000 t} $$
+        Two-sided amplitude spectrum untuk sinusoid:
+        \begin{figure}
+            \includegraphics[width=\linewidth]{img/img18}
+        \end{figure}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{jawaban Contoh Soal}
+    \begin{enumerate}
+        \item[b)] Recovered spectrum:
+        \begin{figure}
+            \includegraphics[width=\linewidth]{img/img19}
+        \end{figure}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Contoh Soal}
+    Diasumsikan analog signal $$ x(t) = 5 \cos(2\pi 2000 t) + \cos(2\pi 5000t),~\text{ untuk } t \geq 0 $$ dengan sampling rate 8 kHz
+    \begin{enumerate}
+        \item[a)] Gambarkan spektrum sampled signal 8 kHz
+        \item[b)] Gambarkan recovered analog signal spectrum jika ideal lowpass filter dengan cutoff-frequency 4 kHz is menggunakan filter dengan sampled signal (y(n) = x(n)) untuk merekonstruksi original signal.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{jawaban Contoh Soal}
+    \begin{enumerate}
+        \item[a)] Menggunakan persamaan Euler
+        $$x(t) = \frac{1}{2}e^{-j2 \pi 5000 t} + \frac{5}{2}e^{-j2 \pi 2000 t} + \frac{5}{2}e^{j2 \pi 2000 t} + \frac{1}{2}e^{j2 \pi 2000 t} $$
+        Two-sided amplitude spectrum untuk sinusoid:
+        \begin{figure}
+            \includegraphics[width=\linewidth]{img/img20}
+        \end{figure}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{jawaban Contoh Soal}
+    \begin{enumerate}
+        \item[b)] Recovered spectrum:
+        \begin{figure}
+            \includegraphics[width=\linewidth]{img/img21}
+        \end{figure}
     \end{enumerate}
 \end{frame}
 

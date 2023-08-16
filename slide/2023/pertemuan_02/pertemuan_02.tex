@@ -29,6 +29,8 @@
 
 \maketitle
 
+\section{Sampling}
+
 \begin{frame}{Diagram blok pengolahan\\sinyal digital}
     \begin{figure}
         \includegraphics[width=\linewidth]{./img/img01.png}
@@ -62,39 +64,47 @@
         \begin{equation}
             f_s = \frac{1}{T} \text{ samples per second (Hz)}
         \end{equation}
-        \item Contoh: jika sampling period, $T$, adalah 125 $\mu s$, maka sampling rate adalah $$ f_s = \frac{1}{125 \mu s} = 8000 \text{ Hz} $$
+        \item Contoh: jika sampling period, $T$ = 125 $\mu s$, maka sampling rate adalah $$ f_s = \frac{1}{125 \mu s} = 8000 \text{ Hz} $$
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Teorema Sampling}
     \begin{itemize}
-        \item Berapa minimum sampling rate yang dibutuhkan agar dapat merekonstruksi sinyal analog?
-        \item Jika sinyal analog tidak di-sampling dengan baik maka akan terjadi \textbf{aliasing}
+        \item Berapa minimum sampling rate yang dibutuhkan?
     \end{itemize}    
 \end{frame}
 
 \begin{frame}{Teorema Sampling}
-    \begin{figure}
-        \includegraphics[width=\linewidth]{./img/img04.png}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Teorema Sampling}
-    \begin{figure}
-        \includegraphics[width=\linewidth]{./img/img05.png}
-    \end{figure}
+    \begin{itemize}
+        \item Sinyal analog 40 Hz, sampling period T = 0.01 detik, sehingga sampling rate $f_s = \frac{1}{T} = \frac{1}{0.01} = 100$ Hz
+        \item Sinyal sampled masih terlihat sama dengan sinyal analog
+        \begin{figure}
+            \includegraphics[width=\linewidth]{./img/img04.png}
+        \end{figure}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Teorema Sampling}
     \begin{itemize}
-        \item Sinyal analog dapat direkonstruksi dengan baik selama sampling rate-nya minimal 2 kali daripada komponen frekuensi tertinggi dari sinyal analognya
+        \item Sinyal analog 90 Hz, sampling period T = 0.01 detik, sehingga sampling rate $f_s = \frac{1}{T} = \frac{1}{0.01} = 100$ Hz
+        \item Sinyal sampled terlihat memiliki frekuensi 10 Hz.
+        \begin{figure}
+            \includegraphics[width=\linewidth]{./img/img05.png}
+        \end{figure}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Teorema Sampling}
+    \begin{itemize}
+        \item Sehingga ada nilai minimum dari sampling rate.
+        \item Sinyal sampled akan memiliki frekuensi yang sama selama sampling rate-nya minimal 2 kali daripada komponen frekuensi tertinggi dari sinyal analognya
 
         \begin{equation}
             f_s \geq 2 f_\text{max}
         \end{equation}
 
         $f_\text{max}$ adalah komponen frekuensi tertinggi dari sinyal analog
-        \item Contoh: sinyal suara yang mengandung banyak frekuensi hingga 4 kHz, minimum sampling rate yang dipilih setidaknya 8 kHz atau 8000 sampel per detik
+        \item Sehingga dari ilustrasi sebelumnya, sampling rate minimal untuk sinyal analog 90 Hz adalah 2$\times$90 Hz = 180 Hz
     \end{itemize}
 \end{frame}
 
@@ -211,7 +221,7 @@
             X_s(f) = \frac{1}{T} \sum_{k = -\infty}^{\infty} X(f - kf_s)
             \label{eq:Xsf_and_Xf}
         \end{equation}
-        yang mana $X(f)$ adalah original baseband spectrum sedangkan $X_s(f)$ sampled signal spectrum yang terdiri dari original baseband spectrum $X(f)$ dan kembarannya $X(f\pm kf_s)$
+        yang mana $X(f)$ adalah spectrum sinyal asli sedangkan $X_s(f)$ spectrum sinyal sampled yang terdiri dari spectrum sinyal asli $X(f)$ dan kembarannya $X(f\pm kf_s)$
     \end{itemize}
 \end{frame}
 
@@ -222,16 +232,16 @@
             X_s(f) = \cdots + \frac{1}{T}X(f+f_s) + \frac{1}{T}X(f) + \frac{1}{T}X(f-f_s) + \cdots
             \label{eq:deret_Xsf_and_Xf}
         \end{equation}
-        \item sampled signal spectrum merupakan penjumlahan dari scaled original spectrum dan kembarannya (shifted-version of scaled original spectrum)
+        \item spectrum sinyal sample, $X_s(f)$, merupakan penjumlahan dari scaled spectrum sinyal asli, $ \frac{1}{T} X(f) $, dan scaled spectrum kembarannya, $ \frac{1}{T} X(f \pm f_s) $.
         \item Pers. (\ref{eq:deret_Xsf_and_Xf}) memiliki kemungkinan 3 grafik berdasarkan nilai sampling rate-nya ($f_s$)
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Teorema Sampling}
     \begin{itemize}
-        \item Kondisi 1: sampled signal spectrum terpisah dengan kembarannya
+        \item Kondisi 1: spectrum sinyal sample terpisah dengan kembarannya
         \begin{figure}
-            \includegraphics[width=\linewidth]{./img/img09}
+            \includegraphics[width=0.9\linewidth]{./img/img09}
             \label{img:09}
         \end{figure}
     \end{itemize}
@@ -239,25 +249,26 @@
 
 \begin{frame}{Teorema Sampling}
     \begin{itemize}
-        \item Kondisi 2: sampled signal spectrum terhubung dengan kembarannya
+        \item Kondisi 2: spectrum sinyal sample terhubung dengan kembarannya
         \begin{figure}
-            \includegraphics[width=\linewidth]{./img/img10}
+            \includegraphics[width=0.9\linewidth]{./img/img10}
         \end{figure}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Teorema Sampling}
     \begin{itemize}
-        \item Kondisi 3: sampled signal spectrum overlapped dengan kembarannya
+        \item Kondisi 3: spectrum sinyal sample overlapped dengan kembarannya
         \begin{figure}
-            \includegraphics[width=\linewidth]{./img/img11}
+            \includegraphics[width=0.9\linewidth]{./img/img11}
         \end{figure}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Teorema Sampling}
     \begin{itemize}
-        \item Jika kita gunakan lowpass reconstruction filter untuk mendapatkan hasil rekonstruksi dari original signal spectrum, maka kondisi berikut ini harus terpenuhi:
+        \item Agar hasil rekonstruksi sinyal yang didapatkan nanti sama dengan sinyal analog yang asli, maka jangan sampai terjadi overlapped.
+        \item Agar tidak terjadi overlapped, maka harus terpenuhi kondisi:
         \begin{equation}
             f_s - f_{\text{max}} \geq f_{\text{max}}
         \end{equation}
@@ -274,36 +285,40 @@
     \end{itemize} 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Teorema Sampling}
     \begin{theorem}{\textbf{Shannon sampling theorem:}}
         For a uniformly sampled DSP system, an analog signal can be perfectly recovered as long as the sampling rate is at least twice as large as the highest-frequency component of the analog signal to be sampled.
     \end{theorem}
 \end{frame}
 
-\begin{frame}{Kesimpulan}
-    \begin{enumerate}
-        \item Teorema sampling menetapkan bahwa minimum sampling rate dari band-limited analog signal dengan komponen frekuensi tertingginya adalah $f_{\text{max}}$. Jika sampling rate memenuhi Pers. (\ref{eq:freq_nyquist}), maka analog signal dapat direkonstruksi melalui nilai sampled-nya dengan menggunakan lowpass filter, sebagaimana yang ditunjukkan oleh Gambar di halaman \ref{img:09}.
-        \item Setengah dari sampling frequency, $f_s / 2$, biasa disebut \textbf{Nyquist frequency}. Teorema sampling menunjukkan bahwa DSP system dengan sampling rate $f_s$ dapat dengan baik men-sampling analog signal dengan frekuensi tertingginya hingga setengah dari sampling rate tanpa menghasilkan spectral overlap (aliasing). Sehingga, analog signal dapat direkonstruksi dari sampled-nya dengan baik.
-    \end{enumerate}
+\begin{frame}{Teorema Sampling}
+    \begin{itemize}
+        \item Karena sampling rate minimum sebesar 2 kali frekuensi maksimum dari sinyal analog. Dengan kata lain, frekuensi maksimum dari sinyal analog haruslah sama atau kurang dari setengah kali sampling rate-nya
+        \begin{align*}
+            f_s &\geq 2 f_\text{max} \\
+            \frac{f_s}{2} &\geq f_\text{max}
+        \end{align*}
+        \item $\frac{f_s}{2}$ ini disebut sebagai frekuensi Nyquist
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Latihan Soal 1}
+\begin{frame}{Contoh Soal 1}
     \begin{enumerate}
-        \item Diketahui analog signal
+        \item Diketahui sinyal analog
         \begin{equation*}
             x(t) = 5 \cos (2 \pi 1000 t),~\text{ untuk } t \geq 0
         \end{equation*}
         dan sampling rate sebesar 8 kHz.
         \begin{enumerate}
-            \item[a.] Gambarkan spectrum dari original signal
-            \item[b.] Gambarkan spectrum dari sampled signal dari 0 hingga 20 kHz
+            \item[a.] Gambarkan spectrum sinyal analog, $X(f)$
+            \item[b.] Gambarkan spectrum sinyal sample, $X_s(f)$
         \end{enumerate}
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{Jawaban Latihan Soal 1}
+\begin{frame}{Jawaban Contoh Soal 1}
     \begin{itemize}
-        \item Karena analog signal berupa sinusoid dengan peak 5 dan frekuensi 1000 Hz, maka dapat kita tulis dalam bentuk Euler:
+        \item Sinyal analog dapat kita tulis dalam bentuk Euler dengan menggunakan Pers. Euler
     \end{itemize}
     \begin{framed}
     \textbf{Pers. Euler}
@@ -314,7 +329,7 @@
     \end{framed}
 \end{frame}
 
-\begin{frame}{Jawaban Latihan Soal 1}
+\begin{frame}{Jawaban Contoh Soal 1}
     \begin{itemize}
         \item sehingga
         \begin{align}
@@ -322,33 +337,35 @@
             &= 2.5 e^{j2 \pi 1000t} + 2.5 e^{-j2 \pi 1000t}
             \label{eq:lat.soal.1}
         \end{align}
-        \item Pers. (\ref{eq:lat.soal.1}) adalah bentuk complex-exponential dari deret Fourier. Bentuk umum dari complex-exponential dari deret Fourier:
-        \begin{equation*}
-            x(t) = \sum_{k=-\infty}^{-\infty} c_k e^{jk\omega_0 t} = \sum_{k=-\infty}^{-\infty} c_k e^{jk 2\pi f_0 t}
-        \end{equation*}
+        \item Pers. (\ref{eq:lat.soal.1}) adalah bentuk complex-exponential dari deret Fourier.
+        \item Bentuk umum dari complex-exponential dari deret Fourier:
+        \begin{framed}
+            \begin{equation*}
+                x(t) = \sum_{k=-\infty}^{-\infty} c_k e^{jk\omega_0 t} = \sum_{k=-\infty}^{-\infty} c_k e^{jk 2\pi f_0 t}
+            \end{equation*}
+        \end{framed}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Jawaban Latihan Soal 1}
+\begin{frame}{Jawaban Contoh Soal 1}
     \begin{itemize}
-        \item Sehingga koef. deret Fourier adalah $c_1 = 2.5$ dan $c_{-1} = 2.5$
-        \item dengan menggunakan magnitude dari koef., kita plot two-side spectrum dari original signal
+        \item Sehingga gambar spectrum sinyal analog, $X(f)$, adalah:
         \begin{figure}
             \includegraphics[width=\linewidth]{./img/img12}
         \end{figure}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Jawaban Latihan Soal 1}
+\begin{frame}{Jawaban Contoh Soal 1}
     \begin{itemize}
-        \item setelah analog signal di sampling dengan sampling rate 8000 Hz, maka sample signal spectrum dan kembarannya berada di frekuensi $\pm kf_s$ yang dengan scaled-amplitude sebesar $2.5/T$
+        \item setelah analog signal di sampling dengan sampling rate 8000 Hz, maka spectrum sinyal sample dan kembarannya berada di frekuensi $\pm kf_s$ yang dengan scaled-amplitude sebesar $2.5/T$
         \begin{figure}
             \includegraphics[width=\linewidth]{./img/img13}
         \end{figure}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Latihan Soal 2}
+\begin{frame}{Contoh Soal 2}
     \begin{enumerate}
         \setcounter{enumi}{1}
         \item Diketahui analog signal
@@ -357,13 +374,13 @@
         \end{equation*}
         dan sampling rate sebesar 8 kHz.
         \begin{enumerate}
-            \item[a.] Gambarkan spectrum dari original signal
-            \item[b.] Gambarkan spectrum dari sampled signal dari 0 hingga 20 kHz
+            \item[a.] Gambarkan spectrum sinyal analog, $X(f)$
+            \item[b.] Gambarkan spectrum sinyal sample, $X_s(f)$
         \end{enumerate}
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{Latihan Soal 3}
+\begin{frame}{Contoh Soal 3}
     \begin{enumerate}
         \setcounter{enumi}{2}
         \item Diketahui analog signal
@@ -372,13 +389,13 @@
         \end{equation*}
         dan sampling rate sebesar 8 kHz.
         \begin{enumerate}
-            \item[a.] Gambarkan spectrum dari original signal
-            \item[b.] Gambarkan spectrum dari sampled signal dari 0 hingga 20 kHz
+            \item[a.] Gambarkan spectrum sinyal analog, $X(f)$
+            \item[b.] Gambarkan spectrum sinyal sample, $X_s(f)$
         \end{enumerate}
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{Latihan Soal 4}
+\begin{frame}{Contoh Soal 4}
     \begin{enumerate}
         \setcounter{enumi}{3}
         \item Diketahui analog signal
@@ -387,11 +404,13 @@
         \end{equation*}
         dan sampling rate sebesar 8 kHz.
         \begin{enumerate}
-            \item[a.] Gambarkan spectrum dari original signal
-            \item[b.] Gambarkan spectrum dari sampled signal dari 0 hingga 20 kHz
+            \item[a.] Gambarkan spectrum sinyal analog, $X(f)$
+            \item[b.] Gambarkan spectrum sinyal sample, $X_s(f)$
         \end{enumerate}
     \end{enumerate}
 \end{frame}
+
+\section{Rekonstruksi Sinyal}
 
 \begin{frame}{Rekonstruksi sinyal}
     \begin{figure}
@@ -439,56 +458,56 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Contoh Soal}
+\begin{frame}{Contoh Soal 5}
     Diasumsikan analog signal $$ x(t) = 5 \cos(2\pi 2000 t) + 3\cos(2\pi 3000t),~\text{ untuk } t \geq 0 $$ dengan sampling rate 8 kHz
     \begin{enumerate}
-        \item[a)] Gambarkan spektrum sampled signal 8 kHz
-        \item[b)] Gambarkan recovered analog signal spectrum jika ideal lowpass filter dengan cutoff-frequency 4 kHz is menggunakan filter dengan sampled signal (y(n) = x(n)) untuk merekonstruksi original signal.
+        \item[a)] Gambarkan spektrum sinyal sampled
+        \item[b)] Gambarkan spektrum sinyal analog recovered jika ideal lowpass filter dengan cutoff-frequency 4 kHz.
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{jawaban Contoh Soal}
+\begin{frame}{Jawaban Contoh Soal 5}
     \begin{enumerate}
         \item[a)] Menggunakan persamaan Euler
         $$x(t) = \frac{3}{2}e^{-j2 \pi 3000 t} + \frac{5}{2}e^{-j2 \pi 2000 t} + \frac{5}{2}e^{j2 \pi 2000 t} + \frac{3}{2}e^{j2 \pi 2000 t} $$
-        Two-sided amplitude spectrum untuk sinusoid:
+        Spektrum sinyal sampled
         \begin{figure}
             \includegraphics[width=\linewidth]{img/img18}
         \end{figure}
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{jawaban Contoh Soal}
+\begin{frame}{Jawaban Contoh Soal 5}
     \begin{enumerate}
-        \item[b)] Recovered spectrum:
+        \item[b)] Spektrum sinyal analog recovered tanpa ada noise dari aliasing.
         \begin{figure}
             \includegraphics[width=\linewidth]{img/img19}
         \end{figure}
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{Contoh Soal}
+\begin{frame}{Contoh Soal 6}
     Diasumsikan analog signal $$ x(t) = 5 \cos(2\pi 2000 t) + \cos(2\pi 5000t),~\text{ untuk } t \geq 0 $$ dengan sampling rate 8 kHz
     \begin{enumerate}
-        \item[a)] Gambarkan spektrum sampled signal 8 kHz
-        \item[b)] Gambarkan recovered analog signal spectrum jika ideal lowpass filter dengan cutoff-frequency 4 kHz is menggunakan filter dengan sampled signal (y(n) = x(n)) untuk merekonstruksi original signal.
+        \item[a)] Gambarkan spektrum sinyal sampled
+        \item[b)] Gambarkan spektrum sinyal analog recovered jika ideal lowpass filter dengan cutoff-frequency 4 kHz.
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{jawaban Contoh Soal}
+\begin{frame}{Jawaban Contoh Soal 6}
     \begin{enumerate}
         \item[a)] Menggunakan persamaan Euler
         $$x(t) = \frac{1}{2}e^{-j2 \pi 5000 t} + \frac{5}{2}e^{-j2 \pi 2000 t} + \frac{5}{2}e^{j2 \pi 2000 t} + \frac{1}{2}e^{j2 \pi 2000 t} $$
-        Two-sided amplitude spectrum untuk sinusoid:
+        Spektrum sinyal sampled
         \begin{figure}
             \includegraphics[width=\linewidth]{img/img20}
         \end{figure}
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{jawaban Contoh Soal}
+\begin{frame}{Jawaban Contoh Soal 6}
     \begin{enumerate}
-        \item[b)] Recovered spectrum:
+        \item[b)] Karena frekuensi maksimum dari sinyal analog lebih besar daripada frekuensi Nyquist-nya maka spektrum sinyal analog recovered memiliki aliasing noise di frekuensi 3 kHz:
         \begin{figure}
             \includegraphics[width=\linewidth]{img/img21}
         \end{figure}

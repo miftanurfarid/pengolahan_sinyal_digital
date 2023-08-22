@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[bahasai]{babel}
+\usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -19,8 +19,11 @@
 
 \setbeamertemplate{caption}[numbered]
 
-\title{PENGOLAHAN SINYAL DIGITAL}
-\subtitle{Pengantar Pengolahan Sinyal Digital}
+\title{Digital Signal Processing}
+
+\subtitle{Introduction}
+
+\date{August, $7^{th}$ 2023}
 
 \author{Mifta Nur Farid}
 
@@ -28,53 +31,53 @@
 
 \maketitle
 
-\section{Konsep Dasar Pengolahan Sinyal Digital}
+\section{Basic concepts of digital signal processing}
 
-\begin{frame}{Skema Pengolahan Sinyal Digital}
+\begin{frame}{A digital signal processing scheme}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{img/img01}
 	\end{figure}
 \end{frame}
 
-\section{Contoh Dasar Pengolahan Sinyal Digital dalam Diagram Blok}
+\section{Basic digital signal processing examples in block diagrams}
 
-\subsection{Filter Digital}
+\subsection{Digital filtering}
 
-\begin{frame}{Blok Filter Digital Sederhana}
+\begin{frame}{The simple digital filtering block}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{img/img02}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Blok Filter Digital Sederhana}
+\begin{frame}{Digitized noisy signal and clean digital signal using the digital lowpass filter}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{img/img03}
 	\end{figure}
 \end{frame}
 
-\subsection{Analisis Frekuensi Sinyal (Spektrum)}
+\subsection{Signal frequency (spectrum) analysis}
 
-\begin{frame}{Sinyal Audio dan Spektrumnya}
+\begin{frame}{Signal spectral analysis}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{img/img04}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Sinyal Audio dan Spektrumnya}
+\begin{frame}{Audio signals and their spectra}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{img/img05}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Sinyal Suara dan Spektrum Suara}
+\begin{frame}{Speech samples and speech spectrum}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{img/img06}
 	\end{figure}
 \end{frame}
 
-\section{Gambaran Pengolahan Sinyal Digital dalam Penerapannya di Dunia Nyata }
+\section{Overview of typical digital signal processing in real-world applications}
 
-\subsection{Sistem Audio Crossover Digital}
+\subsection{Digital crossover audio system}
 
 \begin{frame}{Two-band digital crossover}
 	\begin{figure}
@@ -82,23 +85,31 @@
 	\end{figure}
 \end{frame}
 
+\subsection{Interference cancellation in electrocardiography}
+
 \begin{frame}{Elimination of 60-Hz interference in electrocardiography (ECG)}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{img/img08}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Simplified data compressor and Simplified data expander (decompressor)}
+\subsection{Speech coding and compression}
+
+\begin{frame}{Simplified data compressor and data expander (decompressor)}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{img/img09}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Simplified encoder of the CD recording system and Simplified decoder of the CD recording system}
+\subsection{Compact-disc recording system}
+
+\begin{frame}{Simplified encoder of the CD\\recording system and decoder of\\the CD recording system}
 	\begin{figure}
-		\includegraphics[width=0.8\linewidth]{img/img10}
+		\includegraphics[width=0.7\linewidth]{img/img10}
 	\end{figure}
 \end{frame}
+
+\subsection{Vibration signature analysis for defected gear tooth}
 
 \begin{frame}{Vibration signature analysis of the gearbox}
 	\begin{figure}
@@ -106,25 +117,29 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Vibration signal and spectrum from the good condition gearbox}
+\begin{frame}{Vibration signal and spectrum\\from the good condition gearbox}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{img/img12}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Vibration signal and spectrum from the damaged gearbox}
+\begin{frame}{Vibration signal and spectrum\\from the damaged gearbox}
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{img/img13}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Image enhancement.}
+\subsection{Digital image enhancement}
+
+\begin{frame}{Image enhancement}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{img/img14}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Applications of Digital Signal Processing}
+\subsection{Applications of digital signal processing}
+
+\begin{frame}{Applications of digital signal\\processing}
 	\begin{figure}
 		\includegraphics[width=\linewidth]{img/img15}
 	\end{figure}

@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{scipy.fft} \PYG{k+kn}{import} \PYG{n}{fft}
+\PYG{k+kn}{from} \PYG{n+nn}{scipy.io} \PYG{k+kn}{import} \PYG{n}{wavfile}
+
+\PYG{c+c1}{\PYGZsh{} x = input vector}
+\PYG{n}{samplerate}\PYG{p}{,} \PYG{n}{x} \PYG{o}{=} \PYG{n}{wavfile}\PYG{o}{.}\PYG{n}{read}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}audio.wav\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} calculate DFT coefficients}
+\PYG{n}{X} \PYG{o}{=} \PYG{n}{fft}\PYG{o}{.}\PYG{n}{fft}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} X = DFT coefficient vector}
+
+\PYG{c+c1}{\PYGZsh{} inverse of DFT}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{fft}\PYG{o}{.}\PYG{n}{ifft}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
+\end{Verbatim}

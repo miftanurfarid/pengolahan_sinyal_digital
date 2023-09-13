@@ -27,3 +27,5 @@ referensi/*/*/*/*.pdf
 slide/2023/pertemuan_01/pertemuan_01.pdf
 slide/2023/pertemuan_02/pertemuan_02.pdf
 slide/2023/pertemuan_03/pertemuan_03.pdf
+*.idea
+*.vrb

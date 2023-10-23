@@ -143,9 +143,9 @@
     \end{enumerate}
 \end{frame}
 
-\subsection{Discrete Fourier Transform Formulas}
+\subsection{Discrete Fourier Transform}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{itemize}
         \item we assume that the process acquires data samples from digitizing the interested continuous signal for a duration of $T_0$ seconds.
     \end{itemize}
@@ -154,7 +154,7 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{itemize}
         \item a periodic signal $x(n)$ is obtained by copying the acquired $N$ data samples with the duration of $T_0$ to itself repetitively
     \end{itemize}
@@ -163,7 +163,7 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{itemize}
         \item we determine the Fourier series coefficients using one-period $N$ data samples
         and Eq. (\ref{eq:4.5}).
@@ -178,13 +178,13 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{figure}
         \includegraphics[width=\linewidth]{fig/fig.4.06c}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     DFT definition:
     \begin{equation}
         \begin{aligned}[b]
@@ -198,6 +198,7 @@
             X(k) &= x(0)W_N^{k0} + x(1)W_N^{k1} + x(2)W_N^{k2} + \cdots \\
             &+ x(N-1)W_N^{k(N-1)},\text{ for } k = 0,1, \cdots, N-1 \\
         \end{aligned}
+        \label{eq:4.9}
     \end{equation}
     $W_N$ is the twiddle factor
     \begin{equation}
@@ -205,7 +206,7 @@
     \end{equation}
 \end{frame}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{itemize}
         \item To determine the inverse of DFT (IDFT), we can multiply both sides of Eq. (\ref{eq:4.8}) by $e^{j2 \pi k m /N}$ and sum from $k = 0$ to $k = N - 1$, that is
         
@@ -227,7 +228,7 @@
 \end{frame}
 
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{itemize}
         \item Thus, Eq. (\ref{eq:4.11}) becomes
         \begin{equation}
@@ -237,7 +238,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{itemize}
         \item Using Eq. (\ref{eq:4.14}), we see that
     \end{itemize}
@@ -249,7 +250,7 @@
     \end{align*}
 \end{frame}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{align*}
         \vdots\\
         \text{for } m = N-1,~\sum_{k=0}^{N-1} X(k)e^{j\frac{2\pi k(N-1)}{N}} &= \sum_{n=0}^{N-1} x(n) \sum_{k=0}^{N-1} e^{j\frac{2\pi k(N-1-n)}{N}} \\
@@ -257,7 +258,7 @@
     \end{align*}
 \end{frame}
 
-\begin{frame}{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{itemize}
         \item As a summary, we conclude
         \begin{equation}
@@ -269,13 +270,30 @@
                 x(n) &= \frac{1}{N} \sum_{k=0}^{N-1} X(k) e^{j\frac{2 \pi km}{N}} \\
                 &= \frac{1}{N} \sum_{k=0}^{N-1} X(k) W_N^{-kn}, \text{ for } n=0,1,\cdots,N-1
             \end{aligned}
+            \label{eq:4.15}
         \end{equation}
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Discrete Fourier Transform Formulas}
+\begin{frame}{Discrete Fourier Transform}
     \begin{itemize}
-        \item DFT and inverse DFT in python:
+        \item Similar to Eq. (\ref{eq:4.8}), the expansion of Eq. (\ref{eq:4.15}) leads to
+        \begin{equation}
+            \begin{aligned}[b]
+                x(n) =& \frac{1}{N} \left( X(0)  W_N^{-0n} + X(1) W_N^{-1n} + X(2) W_N^{-2n} \right.\\
+                & + \cdots + X(N-1) \left. W_N^{-(N-1)n} \right) \text{,} \\
+                & \text{ for } n=0,1,\cdots,N-1
+            \end{aligned}
+        \end{equation}
+        \item In time domain we use the sample number or time index $n$ for indexing the digital sample sequence $x(n)$.
+        \item However, in frequency domain, we use index $k$ for indexing $N$ calculated DFT coefficients $X(k)$.
+        \item We also refer $k$ as the frequency bin number in Eq. (\ref{eq:4.8}) and Eq. (\ref{eq:4.9})
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Discrete Fourier Transform}
+    \begin{itemize}
+        \item We can do DFT and inverse DFT in python:
     \end{itemize}
     \begin{minted}[frame=lines,framesep=2mm,fontsize=\small,bgcolor=LightGray]{python}
 from scipy.fft import fft
@@ -292,14 +310,14 @@ x = fft.ifft(X)
     \end{minted}
 \end{frame}
 
-\begin{frame}[fragile]{Discrete Fourier Transform Formulas}
+\begin{frame}[fragile]{Discrete Fourier Transform}
     \textbf{Example:}
     \begin{itemize}
         \item Given a sequence $x(n)$ for $0 \leq n \leq 3$, where $x(0) = 1$, $x(1) = 2$, $x(2) = 3$, and $x(3) = 4$, evaluate its DFT $X(k)$.
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Discrete Fourier Transform Formulas}
+\begin{frame}[fragile]{Discrete Fourier Transform}
     \textbf{Solution:}
     \begin{itemize}
         \item Since $N = 4$ and $W_4 = e^{-j\frac{\pi}{2}}$, using Eq. (\ref{eq:4.8}) we have a simplified formula
@@ -309,7 +327,7 @@ x = fft.ifft(X)
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Discrete Fourier Transform Formulas}
+\begin{frame}[fragile]{Discrete Fourier Transform}
     \textbf{Solution (cont.):}
     \begin{itemize}
         \item For $k = 0$
@@ -323,7 +341,7 @@ x = fft.ifft(X)
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Discrete Fourier Transform Formulas}
+\begin{frame}[fragile]{Discrete Fourier Transform}
     \textbf{Solution (cont.):}
     \begin{itemize}
         \item For $k = 1$
@@ -337,7 +355,7 @@ x = fft.ifft(X)
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Discrete Fourier Transform Formulas}
+\begin{frame}[fragile]{Discrete Fourier Transform}
     \textbf{Solution (cont.):}
     \begin{itemize}
         \item For $k = 2$
@@ -351,7 +369,7 @@ x = fft.ifft(X)
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Discrete Fourier Transform Formulas}
+\begin{frame}[fragile]{Discrete Fourier Transform}
     \textbf{Solution (cont.):}
     \begin{itemize}
         \item For $k = 3$
@@ -366,7 +384,7 @@ x = fft.ifft(X)
     \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Discrete Fourier Transform Formulas}
+\begin{frame}[fragile]{Discrete Fourier Transform}
     \textbf{Solution (cont.):}
     \begin{itemize}
         \item Let us verify the result using Python.
@@ -383,7 +401,125 @@ x = fft.ifft(X)
     \end{enumerate}
 \end{frame}
 
+\begin{frame}{Discrete Fourier Transform}
+    \begin{itemize}
+        \item Now we explore the relationship between the frequency bin $k$ and its associated frequency
+        \item The calculated $N$ DFT coefficients $X(k)$ represent the frequency components ranging from 0 Hz (or rad/s) to $f_s$ Hz (or $\omega_s$ rad/s)
+        \item Hence we can map the frequency bin $k$ to its corresponding frequency as follows:
+        \begin{equation}
+            \omega = \frac{k \omega_s}{N} (\text{ rad/s})
+            \label{eq:4.17}
+        \end{equation}
+        or in terms of Hz,
+        \begin{equation}
+            f = \frac{k f_s}{N} (\text{ Hz})
+            \label{eq:4.18}
+        \end{equation}
+        where $\omega_s = 2 \pi f_s$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Discrete Fourier Transform}
+    \begin{itemize}
+        \item We can define the frequency resolution as the frequency step between two consecutive DFT coefficients to measure how fine the frequency domain presentation is and achieve frequency as follows:
+        \begin{equation}
+            \Delta \omega = \frac{\omega_s}{N} (\text{ rad/s})
+        \end{equation}
+        or in terms of Hz, it follows that
+        \begin{equation}
+            \Delta f = \frac{f_s}{N} (\text{ Hz})
+        \end{equation}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Discrete Fourier Transform}
+    \textbf{Example:}\\
+    
+    Given a sequence $x(n)$ for $0 \leq n \leq 3$, where 
+    \begin{equation*}
+        x(0) = 1,~x(1) = 2,~x(2) = 3,~x(3) = 4
+    \end{equation*}
+    
+    we have computed four DFT coefficients $X(k)$ for $0 \leq k \leq 3$ as
+    \begin{equation*}
+        X(0) = 10,~X(1) = -2 + j2,~X(2) = -2,~X(3) = -2 - j2.
+    \end{equation*}
+    
+    If the sampling rate is 10 Hz,
+    
+    \begin{itemize}
+        \item Determine the sampling period, time index, and sampling time instant for a digital sample $x(3)$ in time domain.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Discrete Fourier Transform}
+    \textbf{Example (cont.):}\\   
+    \begin{itemize}
+        \item Determine the frequency resolution, frequency bin, and mapped frequencies for each of the DFT coefficients $X(1)$ and $X(3)$ in frequency domain. 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Discrete Fourier Transform}
+    \textbf{Solution:}\\
+    \begin{itemize}
+        \item In time domain, we have the sampling period calculated as
+        \begin{equation*}
+            T = \frac{1}{f_s} = \frac{1}{10} = 0.1 \text{ s}
+        \end{equation*}
+        For data $x(3)$, the time index is $n = 3$ and the sampling time instant is determined by
+        \begin{equation*}
+            t = nT = 3 \times 0.1 = 0.3 \text{ s}
+        \end{equation*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Discrete Fourier Transform}
+    \textbf{Solution (cont.):}\\
+    \begin{itemize}
+        \item In frequency domain, since the total number of DFT coefficients is four, the frequency resolution is determined by
+        \begin{equation*}
+            \Delta f = \frac{f_s}{N} = \frac{10}{40} = 2.5 \text{ Hz}
+        \end{equation*}
+        The frequency bin for $X(1)$ should be $k = 1$ and its corresponding frequency is determined by
+        \begin{equation*}
+            f = \frac{k f_s}{N} = \frac{1 \times 10}{4} = 2.5 \text{ Hz}
+        \end{equation*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Discrete Fourier Transform}
+    \textbf{Solution (cont.):}\\
+    \begin{itemize}
+        \item[] Similarly, for $X(3)$ and $k = 3$,
+        \begin{equation*}
+            f = \frac{k f_s}{N} = \frac{3 \times 10}{4} = 7.5 \text{ Hz}
+        \end{equation*}
+    \end{itemize}
+    \vfill
+\end{frame}
+
+\begin{frame}{Discrete Fourier Transform}
+    \begin{itemize}
+        \item Note that from Eq. (\ref{eq:4.4}), $k = 3$ is equivalent to $k - N = 3 - 4 = -1$, and $f = 7.5 \text{ Hz}$ is also equivalent to the frequency $f = (-1 \times 10)/4 = -2.5 \text{ Hz}$, which corresponds to the negative side spectrum.
+        \item The amplitude spectrum at 7.5 Hz after folding should match the one at $f_s - f = 10.0 - 7.5 = 2.5 \text{ Hz}$.
+        \item We will apply these developed notations in the following section for amplitude and power spectral estimation.
+    \end{itemize}
+\end{frame}
+
 \section{Amplitude Spectrum dan Power Spectrum}
+
+\begin{frame}{Amplitude Spectrum dan Power Spectrum}
+    \begin{itemize}
+        \item One of the DFT applications is transformation of a finite-length digital signal $x(n)$ into the spectrum in frequency domain.
+        \item The next figure demonstrates such an application, where $A_k$ and $P_k$ are the computed amplitude spectrum and the power spectrum, respectively, using the DFT coefficients $X(k)$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Amplitude Spectrum dan Power Spectrum}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{fig/fig.4.07}
+    \end{figure}
+\end{frame}
 
 \section{Estimasi Spectral menggunakan Window Functions}
 

@@ -31,3 +31,5 @@ slide/2023/pertemuan_03/pertemuan_03.pdf
 *.vrb
 .spyproject
 video_rekaman
+slide/2023/06.fir/_minted-06.fir/*.pygtex
+*pygstyle
